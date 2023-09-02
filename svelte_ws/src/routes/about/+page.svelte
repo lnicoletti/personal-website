@@ -91,7 +91,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
         <img class="headshot" src="src/lib/images/headshot_square.jpeg" alt="thumb" />
 		</div>
     </div>
-    <div class="mt-5">
+    <div class="mt-5 max-w-[250px]">
     <a href="https://www.buymeacoffee.com/leonardonclt" target=__blank><img src="https://img.buymeacoffee.com/button-api/?text={coffeeText}&emoji={emoji}&slug=leonardonclt&button_colour={buttonColor}&font_colour={fontColor}&font_family={fontFamily}&outline_colour={outlineColor}&coffee_colour={coffeeColor}" /></a>
 	  </div>
     <br />
