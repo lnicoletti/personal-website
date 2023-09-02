@@ -1,15 +1,18 @@
 <script>
   import { onMount } from 'svelte';
   // import articles from '$lib/data/articles.csv';
-  import { autoType, csv, timeFormat } from 'd3';
+  import { autoType, csv, timeFormat, descending } from 'd3';
+  import { browser } from '$app/environment';
 
-  export let data;
+//   export let data;
 
-  $: articles = data.articles
+//   $: articles = data.articles
 
-//   onMount(async () => {
-//     articles = await csv('src/lib/data/press.csv', autoType);
-//   });
+  let articles = []
+  
+  onMount(async () => {
+    articles = await csv('src/lib/data/press.csv', autoType);
+  });
 
   const formatTime = timeFormat('%B, %Y');
 
@@ -19,7 +22,7 @@
   $: mobile = innerWidth < 780;
   $: vNarrow = innerWidth < 420;
 
-  $: console.log(data.articles);
+//   $: console.log(data.articles);
   $: innerHeight = 0;
   $: innerWidth = 0;
   $: outerWidth = 0;
@@ -39,7 +42,8 @@
 
 <section>
 	<!-- {#if articles.length>0} -->
-	{#each articles as data, i}
+	{#if browser}
+	{#each articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date))) as data, i}
 	  <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
 	  <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
 	  <div>
@@ -64,6 +68,7 @@
 		</div>
 	  </div>
 	{/each}
+	{/if}
 </section>
 
 <style>
