@@ -20,6 +20,16 @@
 My work has been cited by <a href="https://video.ethz.ch/events/2023/computation/69bf7949-817b-4947-9251-47cfaf0f5416.html" target=__blank>renowned academics</a>, popular <a href="https://www.nytimes.com/2023/07/04/arts/design/black-artists-bias-ai.html" target=__blank>media</a> <a href="https://nypost.com/2023/06/09/ai-tool-stable-diffusion-amplifies-race-and-gender-stereotypes/" target=__blank>outlets</a>, and recently it has been used to develop one of the United Nations' <a href="https://dashboards.sdgindex.org/" target=__blank>Sustainable Development Indicators</a>.</p>`;
 
 
+  // buy me a coffee
+  let coffeeText = "Buy me a slice of pizza?"
+  let buttonColor = "1f1f1f"
+  let fontColor = "ffffff"
+  let outlineColor = "ffffff"
+  let fontFamily = "Lato"//"Cookie"
+  let coffeeColor = "FFDD00"
+  let emoji = "🍕"
+
+
   let awards = [];
   let talks = [];
 
@@ -80,9 +90,11 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
 		<div>
         <img class="headshot" src="src/lib/images/headshot_square.jpeg" alt="thumb" />
 		</div>
-		
-      </div>
-	  <br />
+    </div>
+    <div class="mt-5">
+    <a href="https://www.buymeacoffee.com/leonardonclt" target=__blank><img src="https://img.buymeacoffee.com/button-api/?text={coffeeText}&emoji={emoji}&slug=leonardonclt&button_colour={buttonColor}&font_colour={fontColor}&font_family={fontFamily}&outline_colour={outlineColor}&coffee_colour={coffeeColor}" /></a>
+	  </div>
+    <br />
           <h2 class="title">Awards</h2>
           {#each awards.sort((a,b)=>descending(a.year, b.year)) as data, i}
           <h6>
