@@ -4,7 +4,7 @@
   // import articles from '$lib/data/articles.csv';
   import { autoType, csv, timeFormat } from 'd3';
 
-  let articles = [];
+  let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
 
   onMount(async () => {
     articles = await csv('src/lib/data/articles.csv', autoType);

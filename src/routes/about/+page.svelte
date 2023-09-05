@@ -30,8 +30,8 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
   let emoji = "🍕"
 
 
-  let awards = [];
-  let talks = [];
+  let awards = [{year:2020, link:"", name:"", award:""}];
+  let talks = [{year:2020, link:"", name:"", role:""}];
 
   onMount(async () => {
     awards = await csv('src/lib/data/awards.csv', autoType);

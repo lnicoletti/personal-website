@@ -8,7 +8,7 @@
 
 //   $: articles = data.articles
 
-  let articles = []
+  let articles = [{date:2020, class:"", img:"", url:"", outlet:"", title:"", outlet_url:"", embed:""}]
   
   onMount(async () => {
     articles = await csv('src/lib/data/press.csv', autoType);
