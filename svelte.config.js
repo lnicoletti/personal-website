@@ -3,7 +3,7 @@ import vercel from '@sveltejs/adapter-vercel'
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import preprocess from 'svelte-preprocess';
 
-// /** @type {import('@sveltejs/kit').Config} */
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
