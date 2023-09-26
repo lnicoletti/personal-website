@@ -3,12 +3,13 @@
   import Counter from './Counter.svelte';
   // import articles from '$lib/data/articles.csv';
   import { autoType, csv, timeFormat } from 'd3';
+  import { browser } from '$app/environment';
 
   let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
 
-  onMount(async () => {
+  $: if (browser) { onMount(async () => {
     articles = await csv('src/lib/data/articles.csv', autoType);
-  });
+  })};
 
   const formatTime = timeFormat('%B, %Y');
 
@@ -45,7 +46,7 @@
 <section
   style="grid-template-columns: {laptop ? '1fr 1fr 1fr 1fr 1fr 1fr' : '1fr'}"
 >
-  <!-- {#if articles.length>0} -->
+  {#if browser}
   {#each articles as data, i}
     <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
     <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
@@ -113,7 +114,7 @@
       </div>
     </div>
   {/each}
-  <!-- {/if} -->
+  {/if}
   <!-- <h1>
 		<span class="welcome">
 			

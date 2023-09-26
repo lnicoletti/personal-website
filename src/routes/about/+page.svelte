@@ -33,10 +33,10 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
   let awards = [{year:2020, link:"", name:"", award:""}];
   let talks = [{year:2020, link:"", name:"", role:""}];
 
-  onMount(async () => {
+  $: if (browser) { onMount(async () => {
     awards = await csv('src/lib/data/awards.csv', autoType);
     talks = await csv('src/lib/data/talks.csv', autoType);
-  });
+  })};
 
   let images = [
     'scl.png',
@@ -80,6 +80,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
   <!-- {#if articles.length>0} -->
   <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
   <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
+  {#if browser}
   <div>
     <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'};grid-row: {laptop ? data.gr : 'auto'}"> -->
     <div class="info">
@@ -183,6 +184,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
 			</div> -->
     </div>
   </div>
+  {/if}
 </section>
 
 <style>

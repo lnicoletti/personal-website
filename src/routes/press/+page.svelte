@@ -10,9 +10,9 @@
 
   let articles = [{date:2020, class:"", img:"", url:"", outlet:"", title:"", outlet_url:"", embed:""}]
   
-  onMount(async () => {
+ $: if (browser) { onMount(async () => {
     articles = await csv('src/lib/data/press.csv', autoType);
-  });
+  })};
 
   const formatTime = timeFormat('%B, %Y');
 
