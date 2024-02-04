@@ -11,9 +11,9 @@ export const csr = dev;
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
-  export const load = async ({ fetch }) => {
+  export const load = async ({ fetch, params }) => {
     try {
-      const data = await csv('../src/lib/data/press.csv', autoType);
+      const data = await csv('/src/lib/data/press.csv', autoType);
 
         return {
           articles: data,

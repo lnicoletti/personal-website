@@ -11,10 +11,10 @@ export const csr = dev;
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
-export const load = async ({ fetch }) => {
+export const load = async ({ fetch, params }) => {
     try {
-        const awards = await csv('../src/lib/data/awards.csv', autoType);
-        const talks = await csv('../src/lib/data/talks.csv', autoType);
+        const awards = await csv('/src/lib/data/awards.csv', autoType);
+        const talks = await csv('/src/lib/data/talks.csv', autoType);
 
         return {
             awards: awards,
