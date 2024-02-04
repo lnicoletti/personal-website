@@ -9,10 +9,15 @@
   export let data;
   // export let talks;
 
-  $: console.log("awards", data.awards)
+  // $: console.log("awards", data.awards)
 
-  $: awards = data.awards
-  $: talks = data.talks
+  let awards = [];
+  let talks = [];
+  
+  $: if (browser) {
+    awards = data.awards
+    talks = data.talks
+  }
 
   // 	let bio = `Through effective science communication and visual storytelling, I believe that complex societal issues can be demystified and made accessible to the general public.<br><br>
 

@@ -14,7 +14,11 @@
 
   export let data;
 
-$: articles = data.articles
+  let articles;
+  
+$: if (browser) {
+  articles = data.articles
+}
 
   const formatTime = timeFormat('%B, %Y');
 

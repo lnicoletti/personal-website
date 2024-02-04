@@ -5,9 +5,13 @@
   import { autoType, csv, timeFormat, descending } from 'd3';
   import { browser } from '$app/environment';
 
-  export let data = {articles:[]};
+  export let data;
 
-  $: articles = data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date)))
+  let articles;
+  
+  $: if (browser) {
+	articles = data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date)))
+  }
 
 //   let articles = [{date:2020, class:"", img:"", url:"", outlet:"", title:"", outlet_url:"", embed:""}]
   

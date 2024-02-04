@@ -11,13 +11,19 @@ export const csr = dev;
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
-export const load = async ({ fetch }) => {
-    // const res = await fetch('https://api.coinlore.com/api/tickers/')
-    // const { data } = await res.json()
-    const data = await csv('./src/lib/data/articles.csv', autoType);
 
-    return {
-      articles: data,
-    }
+export const load = async ({ fetch }) => {
+  try {
+    const data = await csv('/src/lib/data/articles.csv', autoType);
+
+      return {
+        articles: data,
+      }
+  } catch (error) {
+      console.error('Error in load function:', error);
+      return {
+          error: 'Internal Server Error'
+      }
   }
+}
   

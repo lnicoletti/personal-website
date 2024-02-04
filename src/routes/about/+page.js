@@ -12,14 +12,20 @@ export const csr = dev;
 export const prerender = true;
 
 export const load = async ({ fetch }) => {
-    // const res = await fetch('https://api.coinlore.com/api/tickers/')
-    // const { data } = await res.json()
-    const awards = await csv('../src/lib/data/awards.csv', autoType);
-    const talks = await csv('../src/lib/data/talks.csv', autoType);
+    try {
+        const awards = await csv('/src/lib/data/awards.csv', autoType);
+        const talks = await csv('/src/lib/data/talks.csv', autoType);
 
-    return {
-        awards: awards,
-        talks: talks
+        return {
+            awards: awards,
+            talks: talks
+        }
+    } catch (error) {
+        console.error('Error in load function:', error);
+        return {
+            error: 'Internal Server Error'
+        }
     }
-  }
+}
+
   
