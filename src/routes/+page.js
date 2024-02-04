@@ -14,7 +14,7 @@ export const prerender = true;
 
 export const load = async ({ fetch, params }) => {
   try {
-    const data = await csv('/src/lib/data/articles.csv', autoType);
+    const data = await csv('../src/lib/data/articles.csv', autoType);
 
       return {
         articles: data,
