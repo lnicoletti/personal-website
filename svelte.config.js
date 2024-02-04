@@ -11,9 +11,9 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		// adapter: adapter()
 		adapter: vercel(),
-		files: {
-            assets: 'src/static'
-        }
+		// files: {
+        //     assets: 'src/lib'
+        // }
 
 	},
 	preprocess: [
