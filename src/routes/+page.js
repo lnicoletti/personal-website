@@ -1,13 +1,23 @@
+/** @type {import('./$types').PageLoad} */
+import { dev } from '$app/environment';
+import { autoType, csv, descending } from 'd3';
+
+
+// we don't need any JS on this page, though we'll load
+// it in dev so that we get hot module replacement
+export const csr = dev;
+
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
-// // import * as db from '$lib/server/database';
-// import { csv } from 'd3';
+export const load = async ({ fetch }) => {
+    // const res = await fetch('https://api.coinlore.com/api/tickers/')
+    // const { data } = await res.json()
+    const data = await csv('src/lib/data/articles.csv', autoType);
 
-// // /** @type {import('./$types').PageServerLoad} */
-// export async function load({ params }) {
-//     return {
-//         data: await csv('$lib/data/articles.csv')
-//     };
-// }
+    return {
+      articles: data,
+    }
+  }
+  

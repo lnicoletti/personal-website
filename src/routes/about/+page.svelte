@@ -1,9 +1,18 @@
-<script lang="ts">
+<script>
+  	/** @type {import('./$types').PageData} */
   import { onMount } from 'svelte';
   import Carousel from 'svelte-carousel';
   import { browser } from '$app/environment';
   import { autoType, csv, descending, timeFormat } from 'd3';
   // import articles from '$lib/data/articles.csv';
+
+  export let data;
+  // export let talks;
+
+  $: console.log("awards", data.awards)
+
+  $: awards = data.awards
+  $: talks = data.talks
 
   // 	let bio = `Through effective science communication and visual storytelling, I believe that complex societal issues can be demystified and made accessible to the general public.<br><br>
 
@@ -30,13 +39,13 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
   let emoji = "🍕"
 
 
-  let awards = [{year:2020, link:"", name:"", award:""}];
-  let talks = [{year:2020, link:"", name:"", role:""}];
+  // let awards = [{year:2020, link:"", name:"", award:""}];
+  // let talks = [{year:2020, link:"", name:"", role:""}];
 
-  $: if (browser) { onMount(async () => {
-    awards = await csv('src/lib/data/awards.csv', autoType);
-    talks = await csv('src/lib/data/talks.csv', autoType);
-  })};
+  // $: if (browser) { onMount(async () => {
+  //   awards = await csv('src/lib/data/awards.csv', autoType);
+  //   talks = await csv('src/lib/data/talks.csv', autoType);
+  // })};
 
   let images = [
     'scl.png',

@@ -1,3 +1,4 @@
+/** @type {import('./$types').PageLoad} */
 import { dev } from '$app/environment';
 import { autoType, csv, descending } from 'd3';
 
@@ -10,13 +11,13 @@ export const csr = dev;
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
-// export const load = async ({ fetch }) => {
-//     // const res = await fetch('https://api.coinlore.com/api/tickers/')
-//     // const { data } = await res.json()
-//     const data = await csv('src/lib/data/press.csv', autoType);
+export const load = async ({ fetch }) => {
+    // const res = await fetch('https://api.coinlore.com/api/tickers/')
+    // const { data } = await res.json()
+    const data = await csv('src/lib/data/press.csv', autoType);
 
-//     return {
-//       articles: data.sort((a,b)=>descending(new Date(a.date), new Date(b.date))),
-//     }
-//   }
+    return {
+      articles: data,
+    }
+  }
   

@@ -1,18 +1,19 @@
 <script>
+/** @type {import('./$types').PageData} */
   import { onMount } from 'svelte';
   // import articles from '$lib/data/articles.csv';
   import { autoType, csv, timeFormat, descending } from 'd3';
   import { browser } from '$app/environment';
 
-//   export let data;
+  export let data = {articles:[]};
 
-//   $: articles = data.articles
+  $: articles = data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date)))
 
-  let articles = [{date:2020, class:"", img:"", url:"", outlet:"", title:"", outlet_url:"", embed:""}]
+//   let articles = [{date:2020, class:"", img:"", url:"", outlet:"", title:"", outlet_url:"", embed:""}]
   
- $: if (browser) { onMount(async () => {
-    articles = await csv('src/lib/data/press.csv', autoType);
-  })};
+//  $: if (browser) { onMount(async () => {
+//     articles = await csv('src/lib/data/press.csv', autoType);
+//   })};
 
   const formatTime = timeFormat('%B, %Y');
 
@@ -43,7 +44,7 @@
 <section>
 	<!-- {#if articles.length>0} -->
 	{#if browser}
-	{#each articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date))) as data, i}
+	{#each articles as data, i}
 	  <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
 	  <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
 	  <div>

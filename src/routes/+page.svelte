@@ -1,15 +1,20 @@
 <script>
+    	/** @type {import('./$types').PageData} */
   import { onMount } from 'svelte';
   import Counter from './Counter.svelte';
   // import articles from '$lib/data/articles.csv';
   import { autoType, csv, timeFormat } from 'd3';
   import { browser } from '$app/environment';
 
-  let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
+  // let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
 
-  $: if (browser) { onMount(async () => {
-    articles = await csv('src/lib/data/articles.csv', autoType);
-  })};
+  // $: if (browser) { onMount(async () => {
+  //   articles = await csv('src/lib/data/articles.csv', autoType);
+  // })};
+
+  export let data;
+
+$: articles = data.articles
 
   const formatTime = timeFormat('%B, %Y');
 
