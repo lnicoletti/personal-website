@@ -14,7 +14,7 @@ export const prerender = true;
 export const load = async ({ fetch }) => {
     // const res = await fetch('https://api.coinlore.com/api/tickers/')
     // const { data } = await res.json()
-    const data = await csv('src/lib/data/articles.csv', autoType);
+    const data = await csv('./src/lib/data/articles.csv', autoType);
 
     return {
       articles: data,
