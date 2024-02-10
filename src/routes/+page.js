@@ -14,7 +14,7 @@ export const prerender = true;
 
 
 export const load = async ({ fetch, params }) => {
-  if (browser) {
+  // if (browser) {
   try {
     const data = await csv('/src/lib/data/articles.csv', autoType);
     console.log("data",data)
@@ -28,9 +28,6 @@ export const load = async ({ fetch, params }) => {
           error: 'Internal Server Error'
       }
   }
-} else {
-  console.log("nobrowser")
-
-}
+// }
 }
   
