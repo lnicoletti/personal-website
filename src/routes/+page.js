@@ -28,6 +28,9 @@ export const load = async ({ fetch, params }) => {
           error: 'Internal Server Error'
       }
   }
+} else {
+  console.log("nobrowser")
+
 }
 }
   
