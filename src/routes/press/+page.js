@@ -13,7 +13,7 @@ export const csr = dev;
 export const prerender = true;
 
   export const load = async ({ fetch, params }) => {
-    // if (browser) {
+    if (browser) {
     try {
       const data = await csv('/src/lib/data/press.csv', autoType);
 
@@ -26,6 +26,6 @@ export const prerender = true;
             error: 'Internal Server Error'
         }
     }
-  // }
+  }
 }
   
