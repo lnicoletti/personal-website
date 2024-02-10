@@ -1,6 +1,7 @@
 /** @type {import('./$types').PageLoad} */
 import { dev } from '$app/environment';
 import { autoType, csv, descending } from 'd3';
+import { browser } from '$app/environment';
 
 
 // we don't need any JS on this page, though we'll load
@@ -12,6 +13,7 @@ export const csr = dev;
 export const prerender = true;
 
   export const load = async ({ fetch, params }) => {
+    if (browser) {
     try {
       const data = await csv('../src/lib/data/press.csv', autoType);
 
@@ -24,5 +26,6 @@ export const prerender = true;
             error: 'Internal Server Error'
         }
     }
+  }
 }
   
