@@ -21,6 +21,8 @@
   $: outerWidth = 0;
   $: outerHeight = 0;
 
+  $:console.log("INNERWIDTH", innerWidth)
+
   // import welcome from '$lib/images/svelte-welcome.webp';
   // import welcome_fallback from '$lib/images/svelte-welcome.png';
 </script>
