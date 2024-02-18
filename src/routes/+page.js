@@ -32,12 +32,12 @@ export const prerender = true;
 // }
 
 export const load = (async ({ fetch }) => {
-  const result = await fetch("/src/lib/data/articles.csv", {
+  const result = await fetch("src/lib/data/articles.csv", {
     headers: { "content-type": "text/csv;charset=UTF-8" },
   });
   
   if (!result.ok) {
-    throw new Error("Failed to fetch dataaaaa");
+    throw new Error("Failed to fetch data");
   }
   console.log("result", result)
   const file = await result.text();
