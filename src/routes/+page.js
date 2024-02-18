@@ -17,7 +17,7 @@ export const load = async ({ fetch, params }) => {
   // if (browser) {
   try {
     const data = await csv('/src/lib/data/articles.csv', autoType);
-    console.log("data",data)
+    console.log("data", data)
 
       return {
         articles: data,
