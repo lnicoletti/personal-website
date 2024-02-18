@@ -6,20 +6,20 @@
   import { autoType, csv, timeFormat } from 'd3';
   import { browser } from '$app/environment';
 
-  let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
+  // let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
 
-  $: if (browser) { onMount(async () => {
-    articles = await csv('src/lib/data/articles.csv', autoType);
-  })};
+  // $: if (browser) { onMount(async () => {
+  //   articles = await csv('src/lib/data/articles.csv', autoType);
+  // })};
 
   export let data;
   console.log("data comp",data)
 
-//   let articles;
+  let articles;
   
-// $: if (browser) {
-//   articles = data.articles
-// }
+$: if (browser) {
+  articles = data.articles
+}
 
   const formatTime = timeFormat('%B, %Y');
 

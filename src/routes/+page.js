@@ -1,6 +1,6 @@
 /** @type {import('./$types').PageLoad} */
 import { dev } from '$app/environment';
-import { autoType, csv, descending } from 'd3';
+import { autoType, csv, descending, csvParse } from 'd3';
 import { browser } from '$app/environment';
 
 
@@ -13,21 +13,48 @@ export const csr = dev;
 export const prerender = true;
 
 
-export const load = async ({ fetch, params }) => {
-  // if (browser) {
-  try {
-    const data = await csv('/src/lib/data/articles.csv', autoType);
-    console.log("data", data)
+// export const load = async ({ fetch, params }) => {
+//   // if (browser) {
+//   try {
+//     const data = await csv('/src/lib/data/articles.csv', autoType);
+//     console.log("data", data)
 
-      return {
-        articles: data,
-      }
-  } catch (error) {
-      console.error('Error in load function:', error);
-      return {
-          error: 'Internal Server Error'
-      }
-  }
+//       return {
+//         articles: data,
+//       }
+//   } catch (error) {
+//       console.error('Error in load function:', error);
+//       return {
+//           error: 'Internal Server Error'
+//       }
+//   }
+// // }
 // }
-}
+
+export const load = (async ({ fetch }) => {
+  const result = await fetch("/src/lib/data/articles.csv", {
+    headers: { "content-type": "text/csv;charset=UTF-8" },
+  });
+  
+  if (!result.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  console.log("result", result)
+  const file = await result.text();
+  const data = csvParse(file, autoType)
+  return {
+    articles: data,
+  }
+  // await new Promise((resolve, reject) => {
+  //   Papa.parse(fileContent, {
+  //     header: true,
+  //     dynamicTyping: true,
+  //     complete: (parseResult) => {
+  //       console.log(parseResult);
+  //       // handle errors etc.
+  //       resolve();
+  //     },
+  //   });
+  // });
+}) 
   
