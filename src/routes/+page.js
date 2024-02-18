@@ -32,7 +32,7 @@ export const prerender = true;
 // }
 
 export const load = (async ({ fetch }) => {
-  const result = await fetch("src/lib/data/articles.csv", {
+  const result = await fetch("./src/lib/data/articles.csv", {
     headers: { "content-type": "text/csv;charset=UTF-8" },
   });
   
