@@ -37,7 +37,7 @@ export const load = (async ({ fetch }) => {
   });
   
   if (!result.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error("Failed to fetch dataaaaa");
   }
   console.log("result", result)
   const file = await result.text();
