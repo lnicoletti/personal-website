@@ -21,17 +21,19 @@ const config = {
 			assets: 'build',
 			fallback: null
 		}),
-		// paths: {
-		// 	base: process.env.NODE_ENV === "production" ? "./" : ""
-		// }
-		vite: {
-            resolve: {
-                alias: {
-                    $src: resolve('./src'),
-                    $lib: resolve('./src/lib'),
-                }
-            }
+		paths: {
+			// base: process.env.NODE_ENV === "production" ? "./" : ""
+			$src: resolve('./src'),
+            $lib: '/src/lib',
 		}
+		// vite: {
+        //     resolve: {
+        //         alias: {
+        //             $src: resolve('./src'),
+        //             $lib: resolve('./src/lib'),
+        //         }
+        //     }
+		// }
 
 		// files: {
 		//     assets: 'src/lib'
