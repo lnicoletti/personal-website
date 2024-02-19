@@ -2,8 +2,7 @@
 import { dev } from '$app/environment';
 import { autoType, csv, descending, csvParse } from 'd3';
 import { browser } from '$app/environment';
-// import { base } from '$service-worker';
-
+import { assets, base, resolveRoute } from '$app/paths';
 
 // we don't need any JS on this page, though we'll load
 // it in dev so that we get hot module replacement
@@ -33,9 +32,10 @@ export const prerender = true;
 // }
 
 export const load = (async ({ fetch, params }) => {
-  console.log("slug", params)
+  // console.log("slug", params)
+  console.log("base", base+"/src/lib/data/articles.csv")
   // const result = await fetch("../../src/lib/data/articles.csv", {
-    const result = await fetch("src/lib/data/articles.csv", {
+    const result = await fetch(base+"/src/lib/data/articles.csv", {
     // const result = await fetch("https://raw.githubusercontent.com/lnicoletti/personal-website/main/src/lib/data/articles.csv", {
     headers: { "content-type": "text/csv;charset=UTF-8" },
   });
