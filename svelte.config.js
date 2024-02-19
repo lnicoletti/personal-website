@@ -21,7 +21,7 @@ const config = {
 			fallback: null
 		}),
 		paths: {
-			base: process.env.NODE_ENV === "production" ? "/personal-website/main" : ""
+			base: process.env.NODE_ENV === "production" ? "/" : ""
 		}
 
 		// files: {
