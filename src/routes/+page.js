@@ -41,6 +41,7 @@ export const load = (async ({ fetch, params }) => {
   });
   
   if (!result.ok) {
+    console.log("base", base+"/src/lib/data/articles.csv")
     throw new Error("Failed to fetch data");
   }
   console.log("result", result)
