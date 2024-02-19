@@ -2,6 +2,7 @@
 // import adapter from '@sveltejs/adapter-static';
 import adapter from '@sveltejs/adapter-vercel'
 // import adapter from '@sveltejs/adapter-netlify';
+import { resolve } from 'path';
 import {
 	vitePreprocess
 } from '@sveltejs/kit/vite';
@@ -20,8 +21,16 @@ const config = {
 			assets: 'build',
 			fallback: null
 		}),
-		paths: {
-			base: process.env.NODE_ENV === "production" ? "./" : ""
+		// paths: {
+		// 	base: process.env.NODE_ENV === "production" ? "./" : ""
+		// }
+		vite: {
+            resolve: {
+                alias: {
+                    $src: resolve('./src'),
+                    $lib: resolve('./src/lib'),
+                }
+            }
 		}
 
 		// files: {
