@@ -20,9 +20,9 @@ const config = {
 			assets: 'build',
 			fallback: null
 		}),
-		// paths: {
+		paths: {
 			base: process.env.NODE_ENV === "production" ? "/personal-website" : ""
-		// }
+		}
 
 		// files: {
 		//     assets: 'src/lib'
