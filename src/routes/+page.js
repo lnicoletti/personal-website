@@ -2,6 +2,7 @@
 import { dev } from '$app/environment';
 import { autoType, csv, descending, csvParse } from 'd3';
 import { browser } from '$app/environment';
+// import { base } from '$service-worker';
 
 
 // we don't need any JS on this page, though we'll load
