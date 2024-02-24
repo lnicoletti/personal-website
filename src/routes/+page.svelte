@@ -13,7 +13,7 @@
   // })};
 
   export let data;
-  console.log("data comp",data)
+  // console.log("data comp", data)
 
   let articles;
   
