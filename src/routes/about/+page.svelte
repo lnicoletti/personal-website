@@ -103,7 +103,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
           {@html bio}
         </div>
 		<div>
-        <img class="headshot" src="src/lib/images/headshot_square.jpeg" alt="thumb" />
+        <img class="headshot" src="/images/headshot_square.jpeg" alt="thumb" />
 		</div>
     </div>
     <div class="mt-5 max-w-[250px]">
@@ -145,7 +145,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
           {#each images as src, imageIndex (src)}
             <div class="img-container">
               {#if loaded.includes(imageIndex)}
-                <img class="logo" src="src/lib/images/clients/{src}" alt="src" />
+                <img class="logo" src="/images/clients/{src}" alt="src" />
               {/if}
             </div>
           {/each}

@@ -33,16 +33,16 @@ export const prerender = true;
 
 export const load = (async ({ fetch, params }) => {
   // console.log("slug", params)
-  console.log("base", base+"/src/lib/data/articles.csv")
+  // console.log("base", base+"/src/lib/data/articles.csv")
   // const result = await fetch("../../src/lib/data/articles.csv", {
-    const result = await fetch(base+"/src/lib/data/articles.csv", {
+    const result = await fetch(base+"/data/articles.csv", {
       // const result = await fetch("$lib/data/articles.csv", {
     // const result = await fetch("https://raw.githubusercontent.com/lnicoletti/personal-website/main/src/lib/data/articles.csv", {
     headers: { "content-type": "text/csv;charset=UTF-8" },
   });
   
   if (!result.ok) {
-    console.log("base", base+"/src/lib/data/articles.csv")
+    // console.log("base", base+"/src/lib/data/articles.csv")
     throw new Error("Failed to fetch data");
   }
   console.log("result", result)

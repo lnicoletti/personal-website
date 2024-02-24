@@ -73,14 +73,14 @@ $: if (browser) {
             {#if data.img.split('.')[1] === 'mp4'}
               <a href={data.url} target="__blank">
                 <video width="100%" height="100%" autoplay loop>
-                  <source src="src/lib/images/{data.img}" type="video/mp4" />
+                  <source src="/images/{data.img}" type="video/mp4" />
                   <source src="{data.img}.ogg" type="video/mp4" />
                   <!-- Your browser does not support the video tag. -->
                 </video>
               </a>
             {:else}
               <a href={data.url} target="__blank">
-                <img src="src/lib/images/{data.img}" alt="thumb" />
+                <img src="/images/{data.img}" alt="thumb" />
               </a>
             {/if}
           </div>
