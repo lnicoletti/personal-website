@@ -11,7 +11,7 @@
   export let data;
   console.log("data comp", data)
 
-  let articles;
+  let articles = [];
 
   // $: if (browser) { onMount(async () => {
   //   articles = await csv('/data/articles.csv', autoType);
