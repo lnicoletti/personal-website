@@ -8,18 +8,18 @@
 
   // let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
 
-  // $: if (browser) { onMount(async () => {
-  //   articles = await csv('src/lib/data/articles.csv', autoType);
-  // })};
-
   export let data;
   // console.log("data comp", data)
 
-  let articles;
+  let articles=[];
+
+  $: if (browser) { onMount(async () => {
+    articles = await csv('/data/articles.csv', autoType);
+  })};
   
-$: if (browser) {
-  articles = data.articles
-}
+// $: if (browser) {
+//   articles = data.articles
+// }
 
   const formatTime = timeFormat('%B, %Y');
 
@@ -29,7 +29,7 @@ $: if (browser) {
   $: mobile = innerWidth < 780;
   $: vNarrow = innerWidth < 420;
 
-  // $: console.log(articles);
+  $: console.log(articles);
   $: innerHeight = 0;
   $: innerWidth = 0;
   $: outerWidth = 0;

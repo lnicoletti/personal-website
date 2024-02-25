@@ -7,7 +7,7 @@
     $: if (browser) {
      open ? document.body.style.overflow='hidden' : document.body.style.overflow='auto'
     }
-    $: console.log($page)
+    // $: console.log($page)
 </script>
 
 <aside class="absolute w-full h-full bg-white border-r-2 shadow-lg" class:open>

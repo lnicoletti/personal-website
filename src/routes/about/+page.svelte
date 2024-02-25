@@ -14,10 +14,10 @@
   let awards = [];
   let talks = [];
   
-  $: if (browser) {
-    awards = data.awards
-    talks = data.talks
-  }
+  // $: if (browser) {
+  //   awards = data.awards
+  //   talks = data.talks
+  // }
 
   // 	let bio = `Through effective science communication and visual storytelling, I believe that complex societal issues can be demystified and made accessible to the general public.<br><br>
 
@@ -47,10 +47,10 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
   // let awards = [{year:2020, link:"", name:"", award:""}];
   // let talks = [{year:2020, link:"", name:"", role:""}];
 
-  // $: if (browser) { onMount(async () => {
-  //   awards = await csv('src/lib/data/awards.csv', autoType);
-  //   talks = await csv('src/lib/data/talks.csv', autoType);
-  // })};
+  $: if (browser) { onMount(async () => {
+    awards = await csv('/data/awards.csv', autoType);
+    talks = await csv('/data/talks.csv', autoType);
+  })};
 
   let images = [
     'scl.png',

@@ -9,15 +9,15 @@
 
   let articles;
   
-  $: if (browser) {
-	articles = data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date)))
-  }
+//   $: if (browser) {
+// 	articles = data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date)))
+//   }
 
 //   let articles = [{date:2020, class:"", img:"", url:"", outlet:"", title:"", outlet_url:"", embed:""}]
   
-//  $: if (browser) { onMount(async () => {
-//     articles = await csv('src/lib/data/press.csv', autoType);
-//   })};
+ $: if (browser) { onMount(async () => {
+    articles = await csv('/data/press.csv', autoType);
+  })};
 
   const formatTime = timeFormat('%B, %Y');
 
