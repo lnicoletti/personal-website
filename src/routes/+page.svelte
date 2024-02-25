@@ -11,15 +11,15 @@
   export let data;
   // console.log("data comp", data)
 
-  let articles=[];
+  let articles;
 
-  $: if (browser) { onMount(async () => {
-    articles = await csv('/data/articles.csv', autoType);
-  })};
+  // $: if (browser) { onMount(async () => {
+  //   articles = await csv('/data/articles.csv', autoType);
+  // })};
   
-// $: if (browser) {
-//   articles = data.articles
-// }
+$: if (browser) {
+  articles = data.articles
+}
 
   const formatTime = timeFormat('%B, %Y');
 
