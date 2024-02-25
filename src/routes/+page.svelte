@@ -9,7 +9,7 @@
   // let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
 
   export let data;
-  // console.log("data comp", data)
+  console.log("data comp", data)
 
   let articles;
 
@@ -56,7 +56,7 @@ $: if (browser) {
 <section
   style="grid-template-columns: {laptop ? '1fr 1fr 1fr 1fr 1fr 1fr' : '1fr'}"
 >
-  {#if browser}
+  <!-- {#if browser} -->
   {#each articles as data, i}
     <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
     <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
@@ -124,7 +124,7 @@ $: if (browser) {
       </div>
     </div>
   {/each}
-  {/if}
+  <!-- {/if} -->
   <!-- <h1>
 		<span class="welcome">
 			
