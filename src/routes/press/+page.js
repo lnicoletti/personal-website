@@ -10,24 +10,39 @@ export const csr = dev;
 
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
-export const prerender = true;
-
-  export const load = async ({ fetch, params }) => {
-    if (browser) {
-    try {
-      const data = await csv('/data/press.csv', autoType);
-
-        return {
-          articles: data,
-        }
-    } catch (error) {
-        console.error('Error in load function:', error);
-        return {
-            error: 'Internal Server Error'
-        }
-    }
+export const load = (async ({ fetch, params }) => {
+  // console.log("slug", params)
+  // console.log("base", base+"/src/lib/data/articles.csv")
+  // const result = await fetch("../../src/lib/data/articles.csv", {
+    // const result = await fetch(base+"/data/articles.csv", {
+      const result = await fetch("/data/press.csv", {
+      // const result = await fetch("$lib/data/articles.csv", {
+    // const result = await fetch("https://raw.githubusercontent.com/lnicoletti/personal-website/main/src/lib/data/articles.csv", {
+    headers: { "content-type": "text/csv;charset=UTF-8" },
+  });
+  
+  if (!result.ok) {
+    // console.log("base", base+"/src/lib/data/articles.csv")
+    throw new Error("Failed to fetch data");
   }
-}
+  // console.log("result", result)
+  const file = await result.text();
+  const data = csvParse(file, autoType)
+  return {
+    articles: data,
+  }
+  // await new Promise((resolve, reject) => {
+  //   Papa.parse(fileContent, {
+  //     header: true,
+  //     dynamicTyping: true,
+  //     complete: (parseResult) => {
+  //       console.log(parseResult);
+  //       // handle errors etc.
+  //       resolve();
+  //     },
+  //   });
+  // });
+}) 
 
 // export const load = (async ({ fetch, params }) => {
 //   console.log("slug", params)

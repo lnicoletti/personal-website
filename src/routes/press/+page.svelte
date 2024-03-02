@@ -10,7 +10,7 @@
   let articles = [];
   
 //   $: if (browser) {
-	$: articles = data.articles//!==undefined?data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date))):data.articles
+	$: articles = data.articles!==undefined?data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date))):data.articles
 //   }
 
 //   let articles = [{date:2020, class:"", img:"", url:"", outlet:"", title:"", outlet_url:"", embed:""}]
