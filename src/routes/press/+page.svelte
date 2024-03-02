@@ -7,8 +7,7 @@
 
   export let data;
 
-  /**@type {Object}*/
-  let articles;
+  let articles = [];
   
 //   $: if (browser) {
 	$: articles = data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date)))
