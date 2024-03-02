@@ -17,9 +17,9 @@
   //   articles = await csv('/data/articles.csv', autoType);
   // })};
   
-$: if (browser) {
-  articles = data.articles
-}
+// $: if (browser) {
+  $: articles = data.articles
+// }
 
   const formatTime = timeFormat('%B, %Y');
 
