@@ -68,11 +68,11 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
     'ubc.png',
   ];
   let screenWidth;
-  $: vWideScreen = innerWidth > 1440;
-  $: laptop = innerWidth > 1100;
-  $: tablet = innerWidth < 1100;
-  $: mobile = innerWidth < 780;
-  $: vNarrow = innerWidth < 420;
+  $: vWideScreen = screenWidth > 1440;
+  $: laptop = screenWidth > 1100;
+  $: tablet = screenWidth < 1100;
+  $: mobile = screenWidth < 780;
+  $: vNarrow = screenWidth < 420;
 
   $: innerHeight = 0;
   // $: innerWidth = 0;
