@@ -69,20 +69,20 @@
         </div>
         {/if}
         {#if data.class !== 'nw' || !laptop}
-          <!-- <div class="thumbnail">
-            {#if data.img.split('.')[1] === 'mp4'}
+          <div class="thumbnail">
+            <!-- {#if data.img.split('.')[1] === 'mp4'}
               <a href={data.url} target="__blank">
                 <video width="100%" height="100%" autoplay loop>
                   <source src="/images/{data.img}" type="video/mp4" />
                   <source src="{data.img}.ogg" type="video/mp4" />
                 </video>
               </a>
-            {:else}
+            {:else} -->
               <a href={data.url} target="__blank">
                 <img src="/images/{data.img}" alt="thumb" />
               </a>
-            {/if}
-          </div> -->
+            <!-- {/if} -->
+          </div>
         {/if}
         <div class="info">
           <div class="flex">
