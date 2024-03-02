@@ -9,14 +9,14 @@
   export let data;
   // export let talks;
 
-  // $: console.log("awards", data.awards)
+  $: console.log("awards", data.awards)
 
   let awards = [];
   let talks = [];
   
   // $: if (browser) {
-  //   awards = data.awards
-  //   talks = data.talks
+  $: awards = data.awards
+  $: talks = data.talks
   // }
 
   // 	let bio = `Through effective science communication and visual storytelling, I believe that complex societal issues can be demystified and made accessible to the general public.<br><br>
@@ -47,10 +47,10 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
   // let awards = [{year:2020, link:"", name:"", award:""}];
   // let talks = [{year:2020, link:"", name:"", role:""}];
 
-  $: if (browser) { onMount(async () => {
-    awards = await csv('/data/awards.csv', autoType);
-    talks = await csv('/data/talks.csv', autoType);
-  })};
+  // $: if (browser) { onMount(async () => {
+  //   awards = await csv('/data/awards.csv', autoType);
+  //   talks = await csv('/data/talks.csv', autoType);
+  // })};
 
   let images = [
     'scl.png',
@@ -94,7 +94,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
   <!-- {#if articles.length>0} -->
   <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
   <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
-  {#if browser}
+  <!-- {#if browser} -->
   <div>
     <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'};grid-row: {laptop ? data.gr : 'auto'}"> -->
     <div class="info">
@@ -198,7 +198,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
 			</div> -->
     </div>
   </div>
-  {/if}
+  <!-- {/if} -->
 </section>
 
 <style>
