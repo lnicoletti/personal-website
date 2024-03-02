@@ -32,17 +32,21 @@
 />
 <!-- class="bg-white-100 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-900"  -->
 <div >
-	<!-- {#if !mobile} -->
-		<Header />
-		<Nav />
-	<!-- {:else}
+	{#if mobile}
 		<Sidebar bind:open/>
 		<NavMobile bind:sidebar={open}/>
-	{/if} -->
+		<main>
+			<slot />
+		</main>
+	{:else}
+		<Header />
+		<Nav />
+		<main>
+			<slot />
+		</main>
+	{/if}
 
-	<main>
-		<slot />
-	</main>
+	
 
 	<!-- <footer>
 		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
