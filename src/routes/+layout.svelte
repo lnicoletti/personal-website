@@ -32,13 +32,13 @@
 />
 <!-- class="bg-white-100 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-900"  -->
 <div >
-	{#if !mobile}
+	<!-- {#if !mobile} -->
 		<Header />
 		<Nav />
-	{:else}
+	<!-- {:else}
 		<Sidebar bind:open/>
 		<NavMobile bind:sidebar={open}/>
-	{/if}
+	{/if} -->
 
 	<main>
 		<slot />
