@@ -32,7 +32,7 @@
 />
 <!-- class="bg-white-100 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-900"  -->
 <div >
-	{#if innerWidth != null}
+	{#if innerWidth !== null && innerWidth !== undefined && innerWidth !== 0}
 		{#if mobile}
 			<Sidebar bind:open/>
 			<NavMobile bind:sidebar={open}/>
