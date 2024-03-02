@@ -32,19 +32,21 @@
 />
 <!-- class="bg-white-100 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-900"  -->
 <div >
-	<!-- {#if mobile}
-		<Sidebar bind:open/>
-		<NavMobile bind:sidebar={open}/>
-		<main>
-			<slot />
-		</main>
-	{:else} -->
-		<Header />
-		<Nav />
-		<main>
-			<slot />
-		</main>
-	<!-- {/if} -->
+	{#if innerWidth != null}
+		{#if mobile}
+			<Sidebar bind:open/>
+			<NavMobile bind:sidebar={open}/>
+			<main>
+				<slot />
+			</main>
+		{:else}
+			<Header />
+			<Nav />
+			<main>
+				<slot />
+			</main>
+		{/if}
+	{/if}
 
 	
 
