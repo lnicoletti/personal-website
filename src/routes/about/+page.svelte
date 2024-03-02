@@ -67,6 +67,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
     'cusp.svg',
     'ubc.png',
   ];
+  let screenWidth;
   $: vWideScreen = innerWidth > 1440;
   $: laptop = innerWidth > 1100;
   $: tablet = innerWidth < 1100;
@@ -74,7 +75,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
   $: vNarrow = innerWidth < 420;
 
   $: innerHeight = 0;
-  $: innerWidth = 0;
+  // $: innerWidth = 0;
   $: outerWidth = 0;
   $: outerHeight = 0;
 </script>
@@ -85,7 +86,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
 </svelte:head>
 <svelte:window
   bind:innerHeight
-  bind:innerWidth
+  bind:innerWidth={screenWidth}
   bind:outerWidth
   bind:outerHeight
 />

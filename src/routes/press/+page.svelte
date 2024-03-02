@@ -20,16 +20,16 @@
 //   })};
 
   const formatTime = timeFormat('%B, %Y');
-
-  $: vWideScreen = innerWidth > 1440;
-  $: laptop = innerWidth > 1100;
-  $: tablet = innerWidth < 1100;
-  $: mobile = innerWidth < 780;
-  $: vNarrow = innerWidth < 420;
+  let screenWidth;
+  $: vWideScreen = screenWidth > 1440;
+  $: laptop = screenWidth > 1100;
+  $: tablet = screenWidth < 1100;
+  $: mobile = screenWidth < 780;
+  $: vNarrow = screenWidth < 420;
 
 //   $: console.log(data.articles);
   $: innerHeight = 0;
-  $: innerWidth = 0;
+//   $: innerWidth = 0;
   $: outerWidth = 0;
   $: outerHeight = 0;
 
@@ -40,7 +40,7 @@
 </svelte:head>
 <svelte:window
   bind:innerHeight
-  bind:innerWidth
+  bind:innerWidth={screenWidth}
   bind:outerWidth
   bind:outerHeight
 />
