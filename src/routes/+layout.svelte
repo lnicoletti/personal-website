@@ -10,14 +10,15 @@
 	
 	
 	let open = false
-  $: vWideScreen = innerWidth > 1440;
-  $: laptop = innerWidth >= 1024;
-  $: tablet = innerWidth < 1024;
-  $: mobile = innerWidth < 780;
-  $: vNarrow = innerWidth < 420;
+	let screenWidth;
+  $: vWideScreen = screenWidth > 1440;
+  $: laptop = screenWidth >= 1024;
+  $: tablet = screenWidth < 1024;
+  $: mobile = screenWidth < 780;
+  $: vNarrow = screenWidth < 420;
 
   $: innerHeight = 0;
-  $: innerWidth = 0;
+//   $: innerWidth = 0;
   $: outerWidth = 0;
   $: outerHeight = 0;
 
@@ -26,13 +27,13 @@
 </script>
 <svelte:window
   bind:innerHeight
-  bind:innerWidth
+  bind:innerWidth={screenWidth}
   bind:outerWidth
   bind:outerHeight
 />
 <!-- class="bg-white-100 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-900"  -->
 <div >
-	{#if innerWidth !== null && innerWidth !== undefined && innerWidth !== 0}
+	<!-- {#if innerWidth !== null && innerWidth !== undefined && innerWidth !== 0} -->
 		{#if mobile}
 			<Sidebar bind:open/>
 			<NavMobile bind:sidebar={open}/>
@@ -46,7 +47,7 @@
 				<slot />
 			</main>
 		{/if}
-	{/if}
+	<!-- {/if} -->
 
 	
 
