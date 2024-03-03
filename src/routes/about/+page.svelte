@@ -67,6 +67,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
     'cusp.svg',
     'ubc.png',
   ];
+  let screenWidth;
   $: screenWidth = 1024;
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
