@@ -23,6 +23,7 @@
 
   const formatTime = timeFormat('%B, %Y');
   
+  let screenWidth;
   $: screenWidth = 1024;
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
