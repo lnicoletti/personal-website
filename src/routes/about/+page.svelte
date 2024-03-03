@@ -67,10 +67,10 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
     'cusp.svg',
     'ubc.png',
   ];
-	let screenWidth = 1000;
+  let screenWidth = 1024;
   $: vWideScreen = screenWidth > 1440;
-  $: laptop = screenWidth > 1100;
-  $: tablet = screenWidth < 1100;
+  $: laptop = screenWidth >= 1024;
+  $: tablet = screenWidth < 1024;
   $: mobile = screenWidth < 780;
   $: vNarrow = screenWidth < 420;
 

@@ -10,7 +10,7 @@
 	
 	
 	let open = false
-	let screenWidth = 1000;
+	let screenWidth = 1024;
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
   $: tablet = screenWidth < 1024;
