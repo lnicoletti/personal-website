@@ -20,7 +20,7 @@
 //   })};
 
   const formatTime = timeFormat('%B, %Y');
-  let screenWidth;
+  let screenWidth = 1000;
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth > 1100;
   $: tablet = screenWidth < 1100;
