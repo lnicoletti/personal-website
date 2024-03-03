@@ -131,7 +131,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
     </div>
     <div class="container">
       <h2 class="title">Who I have worked with</h2>
-      <!-- {#if browser} -->
+      {#if browser}
         <Carousel
           autoplayDuration={0}
           duration={5000}
@@ -151,7 +151,7 @@ My work has been cited by <a href="https://video.ethz.ch/events/2023/computation
             </div>
           {/each}
         </Carousel>
-      <!-- {/if} -->
+      {/if}
     </div>
     <div class="container">
       <h2 class="title">Want to collaborate?</h2>
