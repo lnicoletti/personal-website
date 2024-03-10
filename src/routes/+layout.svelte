@@ -1,4 +1,5 @@
 <script>
+	import { browser } from '$app/environment';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 	import Nav from './Nav.svelte';
@@ -9,8 +10,11 @@
 	import './styles.css';
 	
 	
-	let open = false
-  let screenWidth = 1024;
+  let open = false
+  let screenWidth;
+  $: if (browser){
+	screenWidth = window.innerWidth;
+    }  
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
   $: tablet = screenWidth < 1024;
@@ -44,6 +48,7 @@
 			<Header />
 			<Nav />
 			<p>
+				browser: {browser}
 				screenwidth: {screenWidth}
 			</p>
 			<main>
