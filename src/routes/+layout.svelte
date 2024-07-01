@@ -13,10 +13,10 @@
 	
 	
   let open = false
-  let screenWidth;
-  $: if (browser){
-	screenWidth = window.innerWidth;
-    }  
+  let screenWidth = window.innerWidth;
+//   $: if (browser){
+// 	screenWidth = window.innerWidth;
+//     }  
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
   $: tablet = screenWidth < 1024;
