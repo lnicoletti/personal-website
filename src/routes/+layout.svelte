@@ -46,7 +46,7 @@
 			<Sidebar bind:open/>
 			<NavMobile bind:sidebar={open}/>
 			device: {$device}
-			width: {$width}
+			width: {screenWidth}
 
 			<main>
 				<slot />

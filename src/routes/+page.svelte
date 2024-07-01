@@ -30,7 +30,7 @@
   $: mobile = screenWidth < 780;
   $: vNarrow = screenWidth < 420;
 
-  $: console.log(articles);
+  // $: console.log(articles);
   $: innerHeight = 0;
   // $: innerWidth = 0;
   $: outerWidth = 0;
