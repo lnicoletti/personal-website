@@ -13,10 +13,10 @@
 	
 	
   let open = false
-  let screenWidth = window.innerWidth;
-//   $: if (browser){
-// 	screenWidth = window.innerWidth;
-//     }  
+  $: screenWidth = 1000;
+  $: if (browser){
+	screenWidth = window.innerWidth;
+    }  
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
   $: tablet = screenWidth < 1024;
@@ -47,6 +47,7 @@
 			<NavMobile bind:sidebar={open}/>
 			device: {$device}
 			width: {screenWidth}
+			browser: {browser}
 
 			<main>
 				<slot />
@@ -59,6 +60,7 @@
 				screenwidth: {screenWidth} -->
 				device: {$device}
 				width: {$width}
+				browser: {browser}
 
 			</p>
 			<main>
