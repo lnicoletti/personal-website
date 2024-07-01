@@ -6,8 +6,10 @@
 	import HeaderMobile from './HeaderMobile.svelte';
 	import NavMobile from './NavMobile.svelte';
 	import Sidebar from './Sidebar.svelte';
+	import {device} from '$lib/utils/device.js';
 	import "../app.css";
 	import './styles.css';
+    import Layout from './__layout.svelte';
 	
 	
   let open = false
@@ -18,8 +20,9 @@
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
   $: tablet = screenWidth < 1024;
-  $: mobile = screenWidth < 780;
+  $: mobile = $device === "mobile" //screenWidth < 780;
   $: vNarrow = screenWidth < 420;
+
 
   $: innerHeight = 0;
 //   $: innerWidth = 0;
@@ -35,12 +38,15 @@
   bind:outerWidth
   bind:outerHeight
 />
+<Layout/>
 <!-- class="bg-white-100 dark:bg-slate-700 border-b border-slate-200 dark:border-slate-900"  -->
 <div >
 	<!-- {#if innerWidth !== null && innerWidth !== undefined && innerWidth !== 0} -->
 		{#if mobile}
 			<Sidebar bind:open/>
 			<NavMobile bind:sidebar={open}/>
+			device: {$device}
+
 			<main>
 				<slot />
 			</main>
@@ -48,8 +54,9 @@
 			<Header />
 			<Nav />
 			<p>
-				browser: {browser}
-				screenwidth: {screenWidth}
+				<!-- browser: {browser}
+				screenwidth: {screenWidth} -->
+				device: {$device}
 			</p>
 			<main>
 				<slot />
