@@ -6,7 +6,7 @@
 	import HeaderMobile from './HeaderMobile.svelte';
 	import NavMobile from './NavMobile.svelte';
 	import Sidebar from './Sidebar.svelte';
-	import {device} from '$lib/utils/device.js';
+	import {device, width} from '$lib/utils/device.js';
 	import "../app.css";
 	import './styles.css';
     import Layout from './__layout.svelte';
@@ -46,6 +46,7 @@
 			<Sidebar bind:open/>
 			<NavMobile bind:sidebar={open}/>
 			device: {$device}
+			width: {$width}
 
 			<main>
 				<slot />
@@ -57,6 +58,8 @@
 				<!-- browser: {browser}
 				screenwidth: {screenWidth} -->
 				device: {$device}
+				width: {$width}
+
 			</p>
 			<main>
 				<slot />
