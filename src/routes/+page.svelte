@@ -9,7 +9,7 @@
   // let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
 
   export let data;
-  console.log("data comp", data)
+  // console.log("data comp", data)
 
   let articles = [];
 
@@ -30,7 +30,7 @@
   $: mobile = screenWidth < 780;
   $: vNarrow = screenWidth < 420;
 
-  // $: console.log(articles);
+  $: console.log(articles);
   $: innerHeight = 0;
   // $: innerWidth = 0;
   $: outerWidth = 0;
@@ -222,7 +222,7 @@
   }
 
   section .project-fw {
-    grid-column-end: span 4;
+    grid-column-end: span 5;
     grid-row-end: span 2;
   }
 
@@ -232,12 +232,12 @@
    } */
 
   section .project-hw {
-    grid-column-end: span 2;
+    grid-column-end: span 1;
     grid-row-end: span 1;
   }
 
   section .project-nw {
-    grid-column-end: span 2;
+    grid-column-end: span 1;
     grid-row-end: span 1;
   }
 
