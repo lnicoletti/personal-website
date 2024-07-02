@@ -116,7 +116,7 @@
 		align-items: center;
 		padding: 0 0.5rem;
 		color: var(--color-text);
-		font-weight: 400;
+		font-weight: 500;
 		/* font-size: 0.8rem; */
 		text-transform: uppercase;
 		/* text-transform: capitalize; */

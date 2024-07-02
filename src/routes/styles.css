@@ -226,6 +226,9 @@ ul {
 		opacity: 1
 	
 	  }
+		h3 {
+			font-size: 0.7rem;
+		}
 }
 
 pre {
@@ -289,9 +292,6 @@ header, nav, footer, section {
 } */
 
 @media (max-width: 720px) {
-	h3 {
-		font-size: 0.7rem;
-	}
 
 	h6 {
 		line-height: 1.2;

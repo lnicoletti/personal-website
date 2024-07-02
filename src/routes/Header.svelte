@@ -9,6 +9,7 @@
 	import observable from "$lib/images/observable.svg";
 	import Theme from "$lib/Theme.svelte";
 	import Counter from "./Counter.svelte";
+    import Socials from "./Socials.svelte";
 
 	let socials = [
 		{
@@ -57,10 +58,14 @@
 					<img class="logo" src={logo} alt="logo" />
 				</a>
 			</div>
+			<container class="socials"><Socials flex="row" /></container>
 			<h3 class="dek">
-				Open source applications and visual investigations through data,
-				code, and photography.
+				<!-- Open source applications and visual investigations through data,
+				code, and photography. -->
+				Data, code, and visual storytelling for tech and public accountability.
+				
 			</h3>
+
 		</div>
 
 		<!-- <nav>
@@ -131,14 +136,18 @@
 
 	.logo {
 		/* width: 20%; */
-		max-width: 156px;
-		min-width: 50px;
+		max-width: 110px;
+		min-width: 40px;
 		margin: auto;
 	}
 
 	.logoCont {
 		/* max-width: 20%; */
-		margin-bottom: 20px;
+		margin-bottom: 5px;
+	}
+
+	.logoName {
+		font-size: 0.6rem;
 	}
 
 	.hed {
@@ -169,8 +178,8 @@
 	} */
 
 	.corner {
-		width: 7em;
-		height: 3em;
+		/* width: 7em;
+		height: 3em; */
 	}
 
 	.corner a {
@@ -260,6 +269,18 @@
 	}
 
 	@media (max-width: 500px) {
+
+		.logo {
+		/* width: 20%; */
+		max-width: 85px;
+		min-width: 30px;
+		margin: auto;
+		padding-left: 8px;
+	}
+
+	.socials {
+		display:none
+	}
 		.corner {
 			display: none;
 		}

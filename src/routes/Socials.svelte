@@ -7,34 +7,22 @@
 	import X from '$lib/images/X.png';
 	import linkedin from '$lib/images/linkedin.svg';
 	import instagram from '$lib/images/instagram.svg';
-	import observable from '$lib/images/observable.svg'
-    import Socials from './Socials.svelte';
+	import observable from '$lib/images/observable.svg';
+
+	export let flex="column";
 
 	let socials = [{icon:X, name:"X", url:"https://twitter.com/Leonardonclt"}, {icon:linkedin, name:"linkedin", url:"https://www.linkedin.com/in/leonardonclt/"}, {icon:instagram, name:"instagram", url:"https://www.instagram.com/leonardonclt/?hl=en"}, {icon:observable, name:"observable", url:"https://observablehq.com/@lnicoletti"}, {icon:github, name:"github", url:"https://github.com/lnicoletti"}]
 
 </script>
-
-<container>
-<!-- <section> -->
-	<footer>
-		<div>
-		<h3>© 2022 - Leonardo Nicoletti</h3>
-		</div>
-		<Socials />
-		<!-- <div class="hed">
-			<span class="logoName">Leonardo Nicoletti</span>
-			<div class="logoCont">
-			<a href="https://kit.svelte.dev">
-				<img class="logo" src={logo} alt="SvelteKit" />
-			</a>
+		<div class="corner">
+			<div class="flex" style="flex-direction:{flex}">
+			{#each socials as social, i}
+				<a href={social.url}>
+					<img class="social-icon" src={social.icon} alt={social.name} />
+				</a>
+			{/each}
 			</div>
-			<span>Open source applications and visual investigations through data, code, and photography.</span>
-		</div> -->
-
-	</footer>
-<!-- </section> -->
-</container>
-
+		</div>
 <style>
 
 	container {
@@ -42,6 +30,10 @@
 		/* text-align: center; */
 		display: flex;
 		justify-content: center;
+	}
+
+	.flex {
+		display: flex;
 	}
 
 	.logo {
@@ -90,7 +82,9 @@
 	}
 
 	.corner {
-		width: 9em;
+		width: 6.6em;
+		padding-top:7px;
+		padding-bottom:7px;
 		/* height: 3em; */
 	}
 

@@ -128,7 +128,7 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
       <h2 class="title">Awards</h2>
       {#each awards.sort((a, b) => descending(a.year, b.year)) as data, i}
         <h6>
-          <a href={data.link} target="__blank"><b>{data.year} {data.name}</b></a
+          <a class="achievement" href={data.link} target="__blank">{data.year} {data.name}</a
           >
           - {data.award}
         </h6>
@@ -137,7 +137,7 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
       <h2 class="title">Talks</h2>
       {#each talks.sort((a, b) => descending(a.year, b.year)) as data, i}
         <h6>
-          <a href={data.link} target="__blank"><b>{data.year} {data.name}</b></a
+          <a class="achievement" href={data.link} target="__blank">{data.year} {data.name}</a
           >
           - {data.role}
         </h6>
@@ -172,11 +172,11 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
       <!-- <p class="subtitle">Drop me a line and I'll get back to you as soon as I can</p> -->
       <!-- <br> -->
       <h6>
-        <b>Tips</b> -
+        <span class="achievement" >Tips</span> -
         <a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3@bloomberg.net</a>
       </h6>
       <h6>
-        <b>Other inquiries</b> -
+        <span class="achievement" >Other inquiries</span> -
         <a href="mailto:info.leonardonicoletti@gmail.com"
           >info.leonardonicoletti@gmail.com</a
         >
@@ -220,6 +220,10 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
   .container {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .achievement {
+    font-weight: 600;
   }
 
   img {
