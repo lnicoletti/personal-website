@@ -60,6 +60,13 @@
 		border-bottom: 1px solid black;
 	}
 
+	@media (max-width: 500px) {
+		nav {
+			justify-content: space-between;
+			border: none
+		}
+	}
+
 	svg {
 		width: 2em;
 		height: 3em;
@@ -114,6 +121,8 @@
 		text-decoration: none;
 		transition: color 0.2s linear;
 	}
+
+	
 
 	a:hover {
 		/* color: var(--color-theme-1); */

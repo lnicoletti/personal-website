@@ -105,7 +105,7 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
   <div>
     <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'};grid-row: {laptop ? data.gr : 'auto'}"> -->
     <div class="info">
-      <div class={vNarrow ? "" : "flex"}>
+      <div class={"flex"}>
         <div>
           {@html bio}
         </div>
@@ -233,13 +233,10 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
     max-width: 100%;
   }
 
-  @media (max-width: 420px) {
-    .headshot {
-      margin-top: 20px;
-    }
-  }
+  
 
   .flex {
+    display:flex;
     margin-top: 20px;
     column-gap: 50px;
   }
@@ -279,4 +276,22 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
   /* div.column.is-half {
   width: 50%;
 } */
+
+/* @media (max-width: 420px) {
+    .headshot {
+      margin-top: 20px;
+    }
+  } */
+
+  @media (max-width: 500px) {
+    .headshot {
+      margin-top: 20px;
+    }
+
+    .flex {
+      display:block;
+    }
+  }
+
+
 </style>

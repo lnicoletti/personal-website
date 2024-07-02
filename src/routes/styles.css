@@ -97,6 +97,8 @@ h1 {
 	/* text-align: center; */
 }
 
+
+
 h2 {
 	font-size: 1.2rem;
 	font-family: var(--font-mono);
@@ -128,6 +130,12 @@ h4 {
 	/* font-family: var(--font-mono); */
 	font-weight: 400;
 	/* opacity: 0.9; */
+}
+
+@media (max-width: 1024px) {
+	h4 {
+		font-size: 0.8rem;
+	}
 }
 
 h5 {
@@ -191,6 +199,7 @@ p.subtitle {
 
   }
 
+
 .dot {
 	margin-left:5px;
 	margin-right:5px;
@@ -200,6 +209,23 @@ p.subtitle {
 ul {
 	font-family: var(--font-mono);
 	font-size: 0.8rem;
+}
+
+@media (max-width: 500px) {
+	ul {
+		font-size: 0.65rem;
+	}
+
+	p {
+		font-size: 0.75rem;
+		opacity: 1
+	  }
+
+	p.subtitle {
+		font-size: 0.85rem;
+		opacity: 1
+	
+	  }
 }
 
 pre {

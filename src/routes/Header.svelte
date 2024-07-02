@@ -1,44 +1,69 @@
 <script>
-	import { page } from '$app/stores';
-	import svelte from '$lib/images/svelte-logo.svg';
-	import logo from '$lib/images/logo.gif';
-	import github from '$lib/images/github.svg';
-	import twitter from '$lib/images/twitter.svg';
-	import linkedin from '$lib/images/linkedin.svg';
-	import instagram from '$lib/images/instagram.svg';
-	import observable from '$lib/images/observable.svg'
-	import Theme from '$lib/Theme.svelte'
-    import Counter from './Counter.svelte';
+	import { page } from "$app/stores";
+	import svelte from "$lib/images/svelte-logo.svg";
+	import logo from "$lib/images/logo.gif";
+	import github from "$lib/images/github.svg";
+	import twitter from "$lib/images/twitter.svg";
+	import linkedin from "$lib/images/linkedin.svg";
+	import instagram from "$lib/images/instagram.svg";
+	import observable from "$lib/images/observable.svg";
+	import Theme from "$lib/Theme.svelte";
+	import Counter from "./Counter.svelte";
 
-	let socials = [{icon:twitter, name:"twitter", url:"https://twitter.com/Leonardonclt"}, {icon:linkedin, name:"linkedin", url:"https://www.linkedin.com/in/leonardonclt/"}, {icon:instagram, name:"instagram", url:"https://www.instagram.com/leonardonclt/?hl=en"}, {icon:observable, name:"observable", url:"https://observablehq.com/@lnicoletti"}, {icon:github, name:"github", url:"https://github.com/lnicoletti"}]
+	let socials = [
+		{
+			icon: twitter,
+			name: "twitter",
+			url: "https://twitter.com/Leonardonclt",
+		},
+		{
+			icon: linkedin,
+			name: "linkedin",
+			url: "https://www.linkedin.com/in/leonardonclt/",
+		},
+		{
+			icon: instagram,
+			name: "instagram",
+			url: "https://www.instagram.com/leonardonclt/?hl=en",
+		},
+		{
+			icon: observable,
+			name: "observable",
+			url: "https://observablehq.com/@lnicoletti",
+		},
+		{ icon: github, name: "github", url: "https://github.com/lnicoletti" },
+	];
 </script>
 
 <!-- class="bg-white-100 dark:bg-slate-700 border-slate-200 dark:border-slate-900" -->
 
 <container>
-<header>
-	<div class="corner">
-		<!-- <a href="https://kit.svelte.dev">
+	<header>
+		<div class="corner">
+			<!-- <a href="https://kit.svelte.dev">
 			<img src={svelte} alt="SvelteKit" />
 		</a> -->
-		<!-- <input type="checkbox" id="theme-toggle" />
+			<!-- <input type="checkbox" id="theme-toggle" />
 		<label for="theme-toggle" /> -->
-		<!-- <div class="flex items-center">
+			<!-- <div class="flex items-center">
 			<Theme />
 		</div> -->
-	</div>
-
-	<div class="hed">
-		<h3 class="logoName">Leonardo Nicoletti.</h3>
-		<div class="logoCont">
-			<a href="/">
-				<img class="logo" src={logo} alt="logo" />
-			</a>
 		</div>
-		<h3>Open source applications and visual investigations through data, code, and photography.</h3>
-	</div>
 
-	<!-- <nav>
+		<div class="hed">
+			<h3 class="logoName">Leonardo Nicoletti.</h3>
+			<div class="logoCont">
+				<a href="/">
+					<img class="logo" src={logo} alt="logo" />
+				</a>
+			</div>
+			<h3 class="dek">
+				Open source applications and visual investigations through data,
+				code, and photography.
+			</h3>
+		</div>
+
+		<!-- <nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
@@ -67,20 +92,19 @@
 		</svg>
 	</nav> -->
 
-	<div class="corner">
-		<!-- <div class="flex">
+		<div class="corner">
+			<!-- <div class="flex">
 		{#each socials as social, i}
 			<a href={social.url}>
 				<img class="social-icon" src={social.icon} alt={social.name} />
 			</a>
 		{/each}
 		</div> -->
-	</div>
-</header>
+		</div>
+	</header>
 </container>
 
 <style lang="postcss">
-
 	/* #theme-toggle {
         @apply invisible;
     }
@@ -99,7 +123,7 @@
     } */
 
 	container {
-		width:100%;
+		width: 100%;
 		/* text-align: center; */
 		display: flex;
 		justify-content: center;
@@ -114,7 +138,7 @@
 
 	.logoCont {
 		/* max-width: 20%; */
-		margin-bottom:20px;
+		margin-bottom: 20px;
 	}
 
 	.hed {
@@ -126,6 +150,7 @@
 		margin-bottom: 25px;
 		text-align: center;
 	}
+
 	
 	header {
 		display: flex;
@@ -196,9 +221,9 @@
 		height: 100%;
 	}
 
-	li[aria-current='page']::before {
+	li[aria-current="page"]::before {
 		--size: 6px;
-		content: '';
+		content: "";
 		width: 0;
 		height: 0;
 		position: absolute;
@@ -229,8 +254,42 @@
 	/* h4 {} */
 
 	.highlight {
-		font-weight:700;
+		font-weight: 700;
 		/* background-color: grey;
 		padding:3px */
 	}
+
+	@media (max-width: 500px) {
+		.corner {
+			display: none;
+		}
+		.logoName {
+			display: none;
+		}
+
+		.logoCont {
+			/* max-width: 20%; */
+			margin-bottom: 0px;
+		}
+
+		.hed {
+			justify-content: center;
+			flex-direction: row;
+			align-items: center;
+			column-gap: 40px;
+			max-width: 100%;
+			margin-top: 10px;
+			margin-bottom: 0px;
+			text-align: left;
+		}
+
+		header {
+			border: none;
+		}
+	}
+
+	.dek {
+			opacity:0.5
+		}
+
 </style>
