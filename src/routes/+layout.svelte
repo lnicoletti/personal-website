@@ -20,7 +20,8 @@
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
   $: tablet = screenWidth < 1024;
-  $: mobile = $device === "mobile" //screenWidth < 780;
+//   $: mobile = $device === "mobile" //screenWidth < 780;
+  $: mobile = false;
   $: vNarrow = screenWidth < 420;
 
 

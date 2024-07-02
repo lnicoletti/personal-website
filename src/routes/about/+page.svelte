@@ -143,7 +143,7 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
         </h6>
       {/each}
     </div>
-    <div class="container">
+    <!-- <div class="container">
       <h2 class="title">Who I have worked with</h2>
       {#if browser}
         <Carousel
@@ -166,7 +166,7 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
           {/each}
         </Carousel>
       {/if}
-    </div>
+    </div> -->
     <div class="container">
       <h2 class="title">Want to collaborate?</h2>
       <!-- <p class="subtitle">Drop me a line and I'll get back to you as soon as I can</p> -->
@@ -243,6 +243,10 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
     margin-top: 20px;
     column-gap: 50px;
   }
+
+  .flex > * {
+  flex-basis: 100%;
+}
 
   h2 {
     text-transform: capitalize;
