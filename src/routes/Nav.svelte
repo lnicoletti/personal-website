@@ -11,11 +11,14 @@
     </svg> -->
     <ul>
         <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-            <a href="/">Visual Stories</a>
+            <a href="/">Data Stories</a>
         </li>
 		<span class="dot">&#183</span>
-        <li aria-current={$page.url.pathname.startsWith('/photography') ? 'page' : undefined}>
+        <!-- <li aria-current={$page.url.pathname.startsWith('/photography') ? 'page' : undefined}>
             <a href="/photography">Photography</a>
+        </li> -->
+		<li>
+            <a href="https://www.instagram.com/leonardonclt/?hl=en" target=__blank>Photography</a>
         </li>
 		<span class="dot">&#183</span>
         <!-- <li aria-current={$page.url.pathname.startsWith('/publications') ? 'page' : undefined}>
