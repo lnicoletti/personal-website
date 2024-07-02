@@ -55,7 +55,7 @@
 <!-- {data.fw==="TRUE"?"1 / 5":"1"} -->
 <!-- grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr -->
 <section
-  style="grid-template-columns: {laptop ? '1fr 1fr 1fr 1fr 1fr 1fr' : '1fr'}"
+  
 >
   <!-- {#if browser} -->
   {#each articles as data, i}
@@ -69,7 +69,7 @@
           <div><h6 class="cat">Recent stories</h6></div>
         </div>
         {/if}
-        {#if data.class !== 'nw' || !laptop}
+        <!-- {#if data.class !== 'nw' || !laptop} -->
           <div class="thumbnail">
             {#if data.img.split('.')[1] === 'mp4'}
               <a href={data.url} target="__blank">
@@ -84,7 +84,7 @@
               </a>
             {/if}
           </div>
-        {/if}
+        <!-- {/if} -->
         <div class="info">
           <div class="flex">
             <h6 class="cat">{data.cat}</h6>
@@ -105,9 +105,9 @@
               <a href={data.url} target="__blank">{data.title}</a>
             </h2>
           {/if}
-          {#if data.class === 'fw'|| !laptop}
+          <!-- {#if data.class === 'fw'|| !laptop} -->
             <h4 class="subtitle">{data.subtitle}</h4>
-          {/if}
+          <!-- {/if} -->
           <!-- <div class="flex">
             <h6 class="tools">
               Built with <b>{data.tools.replaceAll('/', ', ')}</b> for
@@ -200,6 +200,7 @@
   }
   section {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     /* NEW */
     /* grid-template-columns: repeat(3, minmax(120px, 1fr)); */
     /* gap: 10px; */
@@ -219,7 +220,58 @@
     grid-row-gap: 1rem;
     /* column-rule: 4px solid red; */
     /* stretch */
+
   }
+
+  @media (max-width: 1024px) {
+    section {
+      grid-template-columns: 1fr;
+
+    }
+
+    .project-fw.subtitle {
+      display: block;
+    }
+
+    .project-hw.subtitle {
+      display: block;
+    }
+
+    .project-nw.subtitle {
+      display: block;
+    }
+
+    .thumbnail {
+      display: block
+    }
+
+    }
+
+  @media (min-width: 1024px) {
+
+    .project-fw .thumbnail {
+      display: block;
+    }
+
+    .project-hw .thumbnail {
+      display: block
+    }
+
+    .project-nw .thumbnail {
+      display: none
+    }
+
+    .project-fw .subtitle {
+      display: block;
+    }
+
+    .project-hw .subtitle {
+      display: none
+    }
+
+    .project-nw .subtitle {
+      display: none
+    }
 
   section .project-fw {
     grid-column-end: span 5;
@@ -240,6 +292,7 @@
     grid-column-end: span 1;
     grid-row-end: span 1;
   }
+}
 
   h1 {
     width: 100%;

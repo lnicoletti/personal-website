@@ -10,13 +10,19 @@
 	import "../app.css";
 	import './styles.css';
     import Layout from './__layout.svelte';
+    import { onMount } from 'svelte';
 	
 	
   let open = false
   $: screenWidth = 1000;
-  $: if (browser){
+//   $: if (browser){
+// 	screenWidth = window.innerWidth;
+//     }  
+
+  onMount(() => {
 	screenWidth = window.innerWidth;
-    }  
+  })
+
   $: vWideScreen = screenWidth > 1440;
   $: laptop = screenWidth >= 1024;
   $: tablet = screenWidth < 1024;
@@ -46,9 +52,9 @@
 		{#if mobile}
 			<!-- <Sidebar bind:open/>
 			<NavMobile bind:sidebar={open}/> -->
-			<!-- device: {$device}
+			device: {$device}
 			width: {screenWidth}
-			browser: {browser} -->
+			browser: {browser}
 
 			<main>
 				<Sidebar bind:open/>
@@ -61,9 +67,9 @@
 			<p>
 				<!-- browser: {browser}
 				screenwidth: {screenWidth} -->
-				<!-- device: {$device}
-				width: {$width}
-				browser: {browser} -->
+				device: {$device}
+				width: {screenWidth}
+				browser: {browser}
 
 			</p>
 			<main>
