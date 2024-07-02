@@ -112,7 +112,7 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
         <div>
           <img
             class="headshot"
-            src="/images/headshot_square.jpeg"
+            src="/images/headshot_new.jpg"
             alt="thumb"
           />
         </div>

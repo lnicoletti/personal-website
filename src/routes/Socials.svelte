@@ -9,7 +9,7 @@
 	import instagram from '$lib/images/instagram.svg';
 	import observable from '$lib/images/observable.svg';
 
-	export let flex="column";
+	export let flex="row";
 
 	let socials = [{icon:X, name:"X", url:"https://twitter.com/Leonardonclt"}, {icon:linkedin, name:"linkedin", url:"https://www.linkedin.com/in/leonardonclt/"}, {icon:instagram, name:"instagram", url:"https://www.instagram.com/leonardonclt/?hl=en"}, {icon:observable, name:"observable", url:"https://observablehq.com/@lnicoletti"}, {icon:github, name:"github", url:"https://github.com/lnicoletti"}]
 
