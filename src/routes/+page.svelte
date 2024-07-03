@@ -75,7 +75,7 @@
           {#if data.img.split(".")[1] === "mp4"}
             <a href={data.url} target="__blank">
               <!-- svelte-ignore a11y-media-has-caption -->
-              <video width="100%" height="100%" autoplay loop>
+              <video width="100%" height="100%" autoplay loop muted>
                 <source src="/images/{data.img}" type="video/mp4" />
                 <source src="/images/{data.img.replace(".mp4",".ogg")}" type="video/ogg" />
               </video>
