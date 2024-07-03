@@ -76,7 +76,7 @@
             <a href={data.url} target="__blank">
               <video width="100%" height="100%" autoplay loop>
                 <source src="/images/{data.img}" type="video/mp4" />
-                <!-- <source src="{data.img}.ogg" type="video/mp4" /> -->
+                <source src="/images/{data.img}.ogg" type="video/ogg" />
               </video>
             </a>
           {:else}
