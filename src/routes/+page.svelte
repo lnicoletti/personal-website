@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
   import Counter from "./Counter.svelte";
   // import articles from '$lib/data/articles.csv';
-  import { autoType, csv, timeFormat } from "d3";
+  import { ascending, autoType, csv, timeFormat } from "d3";
   import { browser } from "$app/environment";
 
   // let articles = [{date:2020, class:"", img:"", url:"", cat:"", title:"", subtitle:"",}]
@@ -18,10 +18,11 @@
   // })};
 
   // $: if (browser) {
-  $: articles = data.articles;
+  $: articles = data.articles.sort((a,b)=>ascending(a.rank,b.rank));
   // }
 
-  const formatTime = timeFormat("%B, %Y");
+  // const formatTime = timeFormat("%B, %Y");
+  const formatTime = timeFormat("%Y");
 
   let screenWidth = 1024;
   $: vWideScreen = screenWidth > 1440;
@@ -67,7 +68,7 @@
       >
         {#if i === 0}
           <div class="recent-stories">
-            <div><h6 class="cat">Recent stories</h6></div>
+            <div><h6 class="cat">Featured</h6></div>
           </div>
         {/if}
         <!-- {#if data.class !== 'nw' || !laptop} -->
@@ -91,7 +92,7 @@
           <div class="flex">
             <h6 class="cat">{data.cat}</h6>
             <span class="dot">&#183</span>
-            <h6 class="date">{formatTime(new Date(data.date))}</h6>
+            <h6 class="date">{data.paid?data.client + ", ":""}{formatTime(new Date(data.date))}</h6>
           </div>
           <!-- {#if data.gc === '1/5'}
           <h1 class="title">

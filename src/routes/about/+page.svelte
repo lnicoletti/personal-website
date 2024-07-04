@@ -34,12 +34,24 @@
   // My work has been cited by <a href="https://video.ethz.ch/events/2023/computation/69bf7949-817b-4947-9251-47cfaf0f5416.html" target=__blank>renowned academics</a>, popular <a href="https://www.nytimes.com/2023/07/04/arts/design/black-artists-bias-ai.html" target=__blank>media</a> <a href="https://nypost.com/2023/06/09/ai-tool-stable-diffusion-amplifies-race-and-gender-stereotypes/" target=__blank>outlets</a>, and recently it has been used to develop one of the United Nations' <a href="https://dashboards.sdgindex.org/" target=__blank>Sustainable Development Indicators</a>.</p>`;
 
   let bio = `
-  <p class="subtitle">Leonardo is an award-winning data-journalist at <a href="https://www.bloomberg.com/authors/AV8suZVL6jY/leonardo-nicoletti" target=__blank>Bloomberg News</a>. He works with data and visual storytelling to report on issues at the intersection of technology and society.</p><br>
+    <p class="subtitle">Leonardo is an award-winning data-journalist at <a href="https://www.bloomberg.com/authors/AV8suZVL6jY/leonardo-nicoletti" target=__blank>Bloomberg News</a>. He works with data and visual storytelling to report on issues at the intersection of technology and society.</p><br>
 
-<p>Leonardo’s work on <a href="https://www.bloomberg.com/graphics/2023-generative-ai-bias/" target=__blank>Generative AI Bias</a> has been cited in reference to AI-policy recommendations at the <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4576667" target=__blank>local level</a>, as well as in official documents about AI risk from <a href="https://assets.publishing.service.gov.uk/media/653bc393d10f3500139a6ac5/future-risks-of-frontier-ai-annex-a.pdf" target=__blank>national governments</a>, international bodies such as the <a href="https://www.ohchr.org/sites/default/files/documents/issues/business/b-tech/taxonomy-GenAI-Human-Rights-Harms.pdf" target=__blank>United Nations</a> and <a href="https://www.imf.org/-/media/Files/Publications/FTN063/2023/English/FTNEA2023006.ashx" target=__blank>IMF</a>, and NGOs like <a href="https://www.amnestyusa.org/wp-content/uploads/2023/12/Amnesty-VCGenAi-Report-V5.pdf" target=__blank>Amnesty International</a>. His work is referenced by tech executives of major companies like <a href="https://www.youtube.com/live/oNP6W8bl0XI?si=rr9Qvo1iOoKIswy0&t=35504" target=__blank>Microsoft</a>, taught in <a href="https://online.umich.edu/series/responsible-generative-ai/" target=__blank>university curriculums</a> and <a href="https://books.google.com/books?id=J2HgEAAAQBAJ&q=bloomberg#v=snippet&q=bloomberg&f=false" target=__blank>books</a> about AI, <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=koWtlJoAAAAJ&citation_for_view=koWtlJoAAAAJ:IjCSPb-OGe4C" target=__blank>cited</a> by dozens academic research papers, and used as a main reference for AI-best practices at numerous institutions like <a href="https://www.ibm.com/topics/ai-bias" target=__blank>IBM</a> and the <a href="https://mitsloanedtech.mit.edu/ai/teach/getting-started/" target=__blank>Massachusetts Institute of Technology</a>.
-<br><br>
+    <p>Leonardo’s work on <a href="https://www.bloomberg.com/graphics/2023-generative-ai-bias/" target=__blank>Generative AI Bias</a> has been cited in reference to AI-policy recommendations at the <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4576667" target=__blank>local level</a>, as well as in official documents about AI risk from <a href="https://assets.publishing.service.gov.uk/media/653bc393d10f3500139a6ac5/future-risks-of-frontier-ai-annex-a.pdf" target=__blank>national governments</a>, international bodies such as the <a href="https://www.ohchr.org/sites/default/files/documents/issues/business/b-tech/taxonomy-GenAI-Human-Rights-Harms.pdf" target=__blank>United Nations</a> and <a href="https://www.imf.org/-/media/Files/Publications/FTN063/2023/English/FTNEA2023006.ashx" target=__blank>IMF</a>, and NGOs like <a href="https://www.amnestyusa.org/wp-content/uploads/2023/12/Amnesty-VCGenAi-Report-V5.pdf" target=__blank>Amnesty International</a>. His work is referenced by tech executives of major companies like <a href="https://www.youtube.com/live/oNP6W8bl0XI?si=rr9Qvo1iOoKIswy0&t=35504" target=__blank>Microsoft</a>, taught in <a href="https://online.umich.edu/series/responsible-generative-ai/" target=__blank>university curriculums</a> and <a href="https://books.google.com/books?id=J2HgEAAAQBAJ&q=bloomberg#v=snippet&q=bloomberg&f=false" target=__blank>books</a> about AI, <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=koWtlJoAAAAJ&citation_for_view=koWtlJoAAAAJ:IjCSPb-OGe4C" target=__blank>cited</a> by dozens academic research papers, and used as a main reference for AI-best practices at numerous institutions like <a href="https://www.ibm.com/topics/ai-bias" target=__blank>IBM</a> and the <a href="https://mitsloanedtech.mit.edu/ai/teach/getting-started/" target=__blank>Massachusetts Institute of Technology</a>.
+    <br><br>
 
-Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-the-winners-of-the-sigmas-2024-for-data-journalism/" target=__blank>Sigma Award</a>, which recognizes the best data journalism from around the world, for his work on Generative AI Bias.</p>`;
+    Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-the-winners-of-the-sigmas-2024-for-data-journalism/" target=__blank>Sigma Award</a>, which recognizes the best data journalism from around the world, for his work on Generative AI Bias.</p>
+    `;
+
+  let hed = `
+   <p class="subtitle">Leonardo is an award-winning data-journalist at <a href="https://www.bloomberg.com/authors/AV8suZVL6jY/leonardo-nicoletti" target=__blank>Bloomberg News</a>. He works with data and visual storytelling to report on issues at the intersection of technology and society.</p>
+  `;
+
+  let subhed = `
+    <p>Leonardo’s work on <a href="https://www.bloomberg.com/graphics/2023-generative-ai-bias/" target=__blank>Generative AI Bias</a> has been cited in reference to AI-policy recommendations at the <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4576667" target=__blank>local level</a>, as well as in official documents about AI risk from <a href="https://assets.publishing.service.gov.uk/media/653bc393d10f3500139a6ac5/future-risks-of-frontier-ai-annex-a.pdf" target=__blank>national governments</a>, international bodies such as the <a href="https://www.ohchr.org/sites/default/files/documents/issues/business/b-tech/taxonomy-GenAI-Human-Rights-Harms.pdf" target=__blank>United Nations</a> and <a href="https://www.imf.org/-/media/Files/Publications/FTN063/2023/English/FTNEA2023006.ashx" target=__blank>IMF</a>, and NGOs like <a href="https://www.amnestyusa.org/wp-content/uploads/2023/12/Amnesty-VCGenAi-Report-V5.pdf" target=__blank>Amnesty International</a>. His work is referenced by tech executives of major companies like <a href="https://www.youtube.com/live/oNP6W8bl0XI?si=rr9Qvo1iOoKIswy0&t=35504" target=__blank>Microsoft</a>, taught in <a href="https://online.umich.edu/series/responsible-generative-ai/" target=__blank>university curriculums</a> and <a href="https://books.google.com/books?id=J2HgEAAAQBAJ&q=bloomberg#v=snippet&q=bloomberg&f=false" target=__blank>books</a> about AI, <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=koWtlJoAAAAJ&citation_for_view=koWtlJoAAAAJ:IjCSPb-OGe4C" target=__blank>cited</a> by dozens academic research papers, and used as a main reference for AI-best practices at numerous institutions like <a href="https://www.ibm.com/topics/ai-bias" target=__blank>IBM</a> and the <a href="https://mitsloanedtech.mit.edu/ai/teach/getting-started/" target=__blank>Massachusetts Institute of Technology</a>.
+    <br><br>
+
+    Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-the-winners-of-the-sigmas-2024-for-data-journalism/" target=__blank>Sigma Award</a>, which recognizes the best data journalism from around the world, for his work on Generative AI Bias.</p>
+  `;
 
   // buy me a coffee
   let coffeeText = "Buy me a slice of pizza?";
@@ -105,7 +117,7 @@ Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-th
   <div>
     <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'};grid-row: {laptop ? data.gr : 'auto'}"> -->
     <div class="info">
-      <div class={"flex"}>
+      <!-- <div class={"flex"}>
         <div>
           {@html bio}
         </div>
@@ -116,6 +128,17 @@ Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-th
             alt="thumb"
           />
         </div>
+      </div> -->
+      <div class={"flex"}>
+        <div>
+          <img class="pixel-art" src="/images/pixeleo.svg" alt="thumb" />
+        </div>
+        <div>
+          {@html hed}
+        </div>
+      </div>
+      <div>
+        {@html subhed}
       </div>
       <div class="mt-5 max-w-[250px]">
         <a href="https://www.buymeacoffee.com/leonardonclt" target="__blank"
@@ -128,7 +151,8 @@ Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-th
       <h2 class="title">Awards</h2>
       {#each awards.sort((a, b) => descending(a.year, b.year)) as data, i}
         <h6>
-          <a class="achievement" href={data.link} target="__blank">{data.year} {data.name}</a
+          <a class="achievement" href={data.link} target="__blank"
+            >{data.year} {data.name}</a
           >
           - {data.award}
         </h6>
@@ -137,7 +161,8 @@ Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-th
       <h2 class="title">Talks</h2>
       {#each talks.sort((a, b) => descending(a.year, b.year)) as data, i}
         <h6>
-          <a class="achievement" href={data.link} target="__blank">{data.year} {data.name}</a
+          <a class="achievement" href={data.link} target="__blank"
+            >{data.year} {data.name}</a
           >
           - {data.role}
         </h6>
@@ -172,11 +197,11 @@ Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-th
       <!-- <p class="subtitle">Drop me a line and I'll get back to you as soon as I can</p> -->
       <!-- <br> -->
       <h6>
-        <span class="achievement" >Tips</span> -
+        <span class="achievement">Tips</span> -
         <a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3@bloomberg.net</a>
       </h6>
       <h6>
-        <span class="achievement" >Other inquiries</span> -
+        <span class="achievement">Other inquiries</span> -
         <a href="mailto:info.leonardonicoletti@gmail.com"
           >info.leonardonicoletti@gmail.com</a
         >
@@ -238,17 +263,25 @@ Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-th
     max-width: 300px;
   }
 
-  
-
-  .flex {
-    display:flex;
-    margin-top: 20px;
-    column-gap: 50px;
+  .pixel-art {
+    width: 350px;
+    object-fit: contain;
+    /* width: 100%; */
   }
 
-  .flex > * {
-  flex-basis: 100%;
-}
+  .flex {
+    display: flex;
+    margin-top: 20px;
+    column-gap: 50px;
+    /* only for pixel art */
+    margin-bottom: 40px;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  /* .flex > * {
+    flex-basis: 100%;
+  } */
 
   h2 {
     text-transform: capitalize;
@@ -282,7 +315,7 @@ Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-th
   width: 50%;
 } */
 
-/* @media (max-width: 420px) {
+  /* @media (max-width: 420px) {
     .headshot {
       margin-top: 20px;
     }
@@ -293,10 +326,16 @@ Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-th
       margin-top: 20px;
     }
 
+    /* remove below for pixel art */
+    /* .flex {
+      display: block;
+    } */
+
+    /* add below for pixel art */
     .flex {
-      display:block;
+      column-gap: 10px;
+      margin-bottom: 20px;
+      margin-top:0px;
     }
   }
-
-
 </style>

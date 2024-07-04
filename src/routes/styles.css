@@ -189,14 +189,16 @@ h7 {
 }
 
 p {
-	font-family: var(--font-serif);
-	font-size: 0.8rem;
+	font-family: var(--font-mono);
+	/* font-size: 0.8rem; */
+	font-size: 0.85rem;
 }
 
 p.subtitle {
 	font-family: var(--font-mono);
-	font-size: 1.1rem;
-	/* font-weight: 500; */
+	/* font-size: 1.1rem; */
+	font-size: 1.2rem;
+	font-weight: 500;
 	opacity: 1
 
   }
@@ -220,11 +222,13 @@ ul {
 
 	p {
 		font-size: 0.7rem;
+		/* font-size: 0.8rem; */
 		opacity: 1
 	  }
 
 	p.subtitle {
-		font-size: 0.85rem;
+		font-size: 0.8rem;
+		/* font-size: 1rem; */
 		opacity: 1
 	
 	  }
