@@ -337,5 +337,10 @@
       margin-bottom: 20px;
       margin-top:0px;
     }
+
+    .pixel-art {
+    width: 420px;
+    /* width: 100%; */
+  }
   }
 </style>
