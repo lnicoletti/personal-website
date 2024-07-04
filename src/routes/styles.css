@@ -190,11 +190,13 @@ h7 {
 
 p {
 	font-family: var(--font-serif);
-	font-size: 0.9rem;
+	font-size: 0.8rem;
 }
 
 p.subtitle {
-	font-size: 1.2rem;
+	font-family: var(--font-mono);
+	font-size: 1.1rem;
+	/* font-weight: 500; */
 	opacity: 1
 
   }
@@ -217,7 +219,7 @@ ul {
 	}
 
 	p {
-		font-size: 0.75rem;
+		font-size: 0.7rem;
 		opacity: 1
 	  }
 

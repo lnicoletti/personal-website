@@ -34,12 +34,12 @@
   // My work has been cited by <a href="https://video.ethz.ch/events/2023/computation/69bf7949-817b-4947-9251-47cfaf0f5416.html" target=__blank>renowned academics</a>, popular <a href="https://www.nytimes.com/2023/07/04/arts/design/black-artists-bias-ai.html" target=__blank>media</a> <a href="https://nypost.com/2023/06/09/ai-tool-stable-diffusion-amplifies-race-and-gender-stereotypes/" target=__blank>outlets</a>, and recently it has been used to develop one of the United Nations' <a href="https://dashboards.sdgindex.org/" target=__blank>Sustainable Development Indicators</a>.</p>`;
 
   let bio = `
-  <p class="subtitle">Leonardo is an award-winning data-journalist at Bloomberg News. He works with data and visual storytelling to report on issues at the intersection of technology and society.</p><br>
+  <p class="subtitle">Leonardo is an award-winning data-journalist at <a href="https://www.bloomberg.com/authors/AV8suZVL6jY/leonardo-nicoletti" target=__blank>Bloomberg News</a>. He works with data and visual storytelling to report on issues at the intersection of technology and society.</p><br>
 
-<p>Leonardo’s work on <a href="https://www.bloomberg.com/graphics/2023-generative-ai-bias/" target=__blank>Generative AI Bias</a> has been cited in reference to AI-policy recommendations at the <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4576667" target=__blank>local level</a>, as well as in official documents about AI risk from <a href="https://assets.publishing.service.gov.uk/media/653bc393d10f3500139a6ac5/future-risks-of-frontier-ai-annex-a.pdf" target=__blank>national governments</a>, international bodies such as the <a href="https://www.ohchr.org/sites/default/files/documents/issues/business/b-tech/taxonomy-GenAI-Human-Rights-Harms.pdf" target=__blank>United Nations</a> and <a href="https://www.imf.org/-/media/Files/Publications/FTN063/2023/English/FTNEA2023006.ashx" target=__blank>IMF</a>, and NGOs like <a href="https://www.amnestyusa.org/wp-content/uploads/2023/12/Amnesty-VCGenAi-Report-V5.pdf" target=__blank>Amnesty International</a>. His work is referenced by tech executives of major companies like <a href="https://www.youtube.com/live/oNP6W8bl0XI?si=rr9Qvo1iOoKIswy0&t=35504" target=__blank>Microsoft</a>, cited by several academic research papers, and used as a main reference for AI-best practices at dozens of institutions like IBM and the Massachusetts Institute of Technology.
+<p>Leonardo’s work on <a href="https://www.bloomberg.com/graphics/2023-generative-ai-bias/" target=__blank>Generative AI Bias</a> has been cited in reference to AI-policy recommendations at the <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4576667" target=__blank>local level</a>, as well as in official documents about AI risk from <a href="https://assets.publishing.service.gov.uk/media/653bc393d10f3500139a6ac5/future-risks-of-frontier-ai-annex-a.pdf" target=__blank>national governments</a>, international bodies such as the <a href="https://www.ohchr.org/sites/default/files/documents/issues/business/b-tech/taxonomy-GenAI-Human-Rights-Harms.pdf" target=__blank>United Nations</a> and <a href="https://www.imf.org/-/media/Files/Publications/FTN063/2023/English/FTNEA2023006.ashx" target=__blank>IMF</a>, and NGOs like <a href="https://www.amnestyusa.org/wp-content/uploads/2023/12/Amnesty-VCGenAi-Report-V5.pdf" target=__blank>Amnesty International</a>. His work is referenced by tech executives of major companies like <a href="https://www.youtube.com/live/oNP6W8bl0XI?si=rr9Qvo1iOoKIswy0&t=35504" target=__blank>Microsoft</a>, taught in <a href="https://online.umich.edu/series/responsible-generative-ai/" target=__blank>university curriculums</a> and <a href="https://books.google.com/books?id=J2HgEAAAQBAJ&q=bloomberg#v=snippet&q=bloomberg&f=false" target=__blank>books</a> about AI, <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=koWtlJoAAAAJ&citation_for_view=koWtlJoAAAAJ:IjCSPb-OGe4C" target=__blank>cited</a> by dozens academic research papers, and used as a main reference for AI-best practices at numerous institutions like <a href="https://www.ibm.com/topics/ai-bias" target=__blank>IBM</a> and the <a href="https://mitsloanedtech.mit.edu/ai/teach/getting-started/" target=__blank>Massachusetts Institute of Technology</a>.
 <br><br>
 
-Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data journalism from around the world, for his work on Generative AI Bias.</p>`;
+Leonardo is a 2024 recipient of the <a href="https://www.sigmaawards.org/meet-the-winners-of-the-sigmas-2024-for-data-journalism/" target=__blank>Sigma Award</a>, which recognizes the best data journalism from around the world, for his work on Generative AI Bias.</p>`;
 
   // buy me a coffee
   let coffeeText = "Buy me a slice of pizza?";
@@ -234,7 +234,8 @@ Leonardo is a 2024 recipient of the Sigma Award, which recognizes the best data 
 
   .headshot {
     object-fit: contain;
-    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
   }
 
   
