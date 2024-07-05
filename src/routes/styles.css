@@ -91,7 +91,7 @@ section {
 h1 {
 	font-size: 2.5rem;
 	/* font-size: 45px; */
-	font-family: var(--font-mono);
+	font-family: var(--font-reg);
 	font-weight: 700;
 	line-height: 1;
 	/* text-align: center; */
@@ -101,7 +101,7 @@ h1 {
 
 h2 {
 	font-size: 1.2rem;
-	font-family: var(--font-mono);
+	font-family: var(--font-reg);
 	font-weight: 700;
 	line-height: 1;
 }
@@ -194,11 +194,17 @@ p {
 	font-size: 0.85rem;
 }
 
-p.subtitle {
+.meta {
 	font-family: var(--font-mono);
+	/* font-size: 0.8rem; */
+	font-size: 0.9rem;
+}
+
+p.subtitle {
+	font-family: var(--font-reg);
 	/* font-size: 1.1rem; */
-	font-size: 1.2rem;
-	font-weight: 500;
+	font-size: 1.55rem;
+	font-weight: 400;
 	opacity: 1
 
   }
@@ -225,11 +231,18 @@ ul {
 		/* font-size: 0.8rem; */
 		opacity: 1
 	  }
+	
+	.meta {
+		font-size: 0.8rem;
+		/* font-size: 0.8rem; */
+		opacity: 1
+	  }
 
 	p.subtitle {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		/* font-size: 1rem; */
-		opacity: 1
+		opacity: 1;
+		font-weight:500
 	
 	  }
 		h3 {
@@ -288,7 +301,7 @@ section {
 
 header, nav, footer, section {
 	width: 70%;
-	max-width: 1800px;
+	max-width: 1200px !important;
 }
 
 /* @media (min-width: 720px) {
@@ -309,7 +322,7 @@ header, nav, footer, section {
 
 	header, nav, footer, section {
 		width: 95%;
-		max-width: 1800px;
+		max-width: 1200px;
 	}
 
 	.logo {

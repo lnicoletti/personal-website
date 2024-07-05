@@ -231,7 +231,7 @@
     }
 
     h1 {
-      font-size: 1.2rem;
+      font-size: 1.8rem;
     }
     .project-fw.subtitle {
       display: block;
@@ -310,6 +310,21 @@
 
   h1 {
     width: 100%;
+  }
+
+  @media (max-width:500px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    section {
+      gap: 0px;
+    }
+
+    .project-fw {
+      /* margin-top: 5px; */
+      margin-bottom: 5px;
+    }
   }
 
   /* .subtitle, .tools, .date {

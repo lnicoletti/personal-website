@@ -131,7 +131,7 @@
       </div> -->
       <div class={"flex"}>
         <div>
-          <img class="pixel-art" src="/images/pixeleo.svg" alt="thumb" />
+          <img class="pixel-art" src="/images/headshot_new.jpg" alt="thumb" />
         </div>
         <div>
           {@html hed}
@@ -152,9 +152,9 @@
       {#each awards.sort((a, b) => descending(a.year, b.year)) as data, i}
         <h6>
           <a class="achievement" href={data.link} target="__blank"
-            >{data.year} {data.name}</a
+            >{data.name}</a
           >
-          - {data.award}
+          <span class="meta">- {data.award}, {data.year}</span>
         </h6>
       {/each}
       <br />
@@ -162,9 +162,9 @@
       {#each talks.sort((a, b) => descending(a.year, b.year)) as data, i}
         <h6>
           <a class="achievement" href={data.link} target="__blank"
-            >{data.year} {data.name}</a
+            >{data.name}</a
           >
-          - {data.role}
+          <span class="meta">- {data.role}, {data.year}</span>
         </h6>
       {/each}
     </div>
@@ -198,13 +198,13 @@
       <!-- <br> -->
       <h6>
         <span class="achievement">Tips</span> -
-        <a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3@bloomberg.net</a>
+        <span class="meta"><a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3@bloomberg.net</a></span>
       </h6>
       <h6>
         <span class="achievement">Other inquiries</span> -
-        <a href="mailto:info.leonardonicoletti@gmail.com"
+        <span class="meta"><a href="mailto:info.leonardonicoletti@gmail.com"
           >info.leonardonicoletti@gmail.com</a
-        >
+        ></span>
       </h6>
       <br />
       <!-- <div class="columns">
@@ -248,7 +248,9 @@
   }
 
   .achievement {
-    font-weight: 600;
+    font-weight: 500;
+    font-family: var(--font-reg);
+    font-size: 1rem;
   }
 
   img {
@@ -264,7 +266,7 @@
   }
 
   .pixel-art {
-    width: 350px;
+    width: 400px;
     object-fit: contain;
     /* width: 100%; */
   }
@@ -341,6 +343,10 @@
     .pixel-art {
     width: 420px;
     /* width: 100%; */
+  }
+
+  .achievement {
+    font-size: 0.9rem;
   }
   }
 </style>
