@@ -301,14 +301,13 @@ section {
 
 header, nav, footer, section {
 	width: 70%;
-	max-width: 1200px !important;
 }
 
-/* @media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
+@media (min-width: 1400px) {
+	header, nav, footer, section {
+		width: 60%;
 	}
-} */
+}
 
 @media (max-width: 720px) {
 
