@@ -193,12 +193,16 @@
       {/if}
     </div> -->
     <div class="container">
-      <h2 class="title">Want to collaborate?</h2>
+      <h2 class="title">Get in touch/tips/leaks</h2>
       <!-- <p class="subtitle">Drop me a line and I'll get back to you as soon as I can</p> -->
       <!-- <br> -->
       <h6>
-        <span class="achievement">Tips</span> -
+        <span class="achievement">Email</span> -
         <span class="meta"><a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3@bloomberg.net</a></span>
+      </h6>
+      <h6>
+        <span class="achievement">Signal</span> -
+        <span class="meta"><a href="tel:+13477315549">+1(347)-731-5549</a></span>
       </h6>
       <h6>
         <span class="achievement">Other inquiries</span> -
