@@ -23,6 +23,8 @@
 	/* --color-bg-1: hsl(209, 36%, 86%); */
 	--color-bg-1: hsl(0, 0%, 100%);
 	--color-bg-2: hsl(224, 44%, 95%);
+	--button-font-color: white;
+	--button-bg: black;
 	/* --color-theme-1: #ff3e00; */
 	/* --color-theme-1: #e1d1ff; */
 	/* --color-theme-1: #f6741e; */
@@ -278,6 +280,24 @@ button {
 
 button:focus:not(:focus-visible) {
 	outline: none;
+}
+
+.button {
+	margin: 5px;
+	padding: 5px;
+	/* font-size: 0.8rem; */
+	color: var(--button-font-color);
+	/* font-family: var(--font-mono); */
+	/* font-weight: 400; */
+	text-transform: capitalize;
+	background: var(--button-bg);
+	border-radius: 2px;
+
+}
+
+.container {
+	width: 100%;
+	text-align: center;
 }
 
 

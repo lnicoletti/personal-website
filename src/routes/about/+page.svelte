@@ -167,7 +167,8 @@
           <span class="meta">- {data.role}, {data.year}</span>
         </h6>
       {/each}
-    </div>
+      <br>
+    <!-- </div> -->
     <!-- <div class="container">
       <h2 class="title">Who I have worked with</h2>
       {#if browser}
@@ -192,7 +193,7 @@
         </Carousel>
       {/if}
     </div> -->
-    <div class="container">
+    <!-- <div class="container"> -->
       <h2 class="title">Get in touch/tips/leaks</h2>
       <!-- <p class="subtitle">Drop me a line and I'll get back to you as soon as I can</p> -->
       <!-- <br> -->

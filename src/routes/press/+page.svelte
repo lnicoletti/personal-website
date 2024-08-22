@@ -13,11 +13,17 @@
 	$: articles = data.articles!==undefined?data.articles.sort((a,b)=>descending(new Date(a.date), new Date(b.date))):data.articles
 //   }
 
+	$: showArticles = category === "all" ? articles : articles.filter(d=>d.cat === category)
+
 //   let articles = [{date:2020, class:"", img:"", url:"", outlet:"", title:"", outlet_url:"", embed:""}]
   
 //  $: if (browser) { onMount(async () => {
 //     articles = await csv('/data/press.csv', autoType);
 //   })};
+
+
+  let categories = ["all", "news", "policy (institution)", "policy (public)", "research"]
+  $: category = "all"
 
   const formatTime = timeFormat('%B, %Y');
   let screenWidth = 1000;
@@ -46,9 +52,19 @@
 />
 
 <section>
+	<!-- <div class="container">
+	{#each categories as c, i}
+	 <button
+	 class="button"
+	 on:click={()=>{
+		category = c
+	 }}
+	 ><h3>{c}</h3></button>
+	{/each}
+	</div> -->
 	<!-- {#if articles.length>0} -->
 	<!-- {#if browser} -->
-	{#each articles as data, i}
+	{#each showArticles as data, i}
 	  <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
 	  <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
 	  <div>

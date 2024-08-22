@@ -11,7 +11,7 @@
     </svg> -->
     <ul>
         <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-            <a href="/">Data Stories</a>
+            <a href="/">Stories</a>
         </li>
 		<span class="dot">&#183</span>
         <!-- <li aria-current={$page.url.pathname.startsWith('/photography') ? 'page' : undefined}>
@@ -26,7 +26,7 @@
         </li>
 		<span class="dot">&#183</span> -->
         <li aria-current={$page.url.pathname.startsWith('/press') ? 'page' : undefined}>
-            <a href="/press">Press</a>
+            <a href="/press">Impact</a>
         </li>
 		<span class="dot">&#183</span>
         <li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
