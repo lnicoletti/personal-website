@@ -21,6 +21,27 @@
   $: articles = data.articles.sort((a,b)=>ascending(a.rank,b.rank));
   // }
 
+  function getGridProperties(category) {
+    if (category === 'fw') {
+      return 'span 4';
+    } else {
+      return Math.random() < 0.5 ? '1' : '5';
+    }
+  }
+
+  function getFlexProperties(category, index) {
+    if (category === 'fw') {
+      return { flexBasis: '80%', order: index };
+    } else {
+      // Randomly assign to first or last column
+      const isFirstColumn = Math.random() < 0.5;
+      return {
+        flexBasis: '20%',
+        order: isFirstColumn ? index - 1 : index + 1
+      };
+    }
+  }
+
   // const formatTime = timeFormat("%B, %Y");
   const formatTime = timeFormat("%Y");
 
@@ -58,6 +79,7 @@
 <section>
   <!-- {#if browser} -->
   {#each articles as data, i}
+    {#if data.show === "TRUE"}
     <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
     <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
     <div class="project{'-' + data.class}">
@@ -92,7 +114,7 @@
           <div class="flex">
             <h6 class="cat">{data.cat}</h6>
             <span class="dot">&#183</span>
-            <h6 class="date">{data.paid?data.client + ", ":""}{formatTime(new Date(data.date))}</h6>
+            <h6 class="date">{data.paid==="TRUE"?data.client + ", ":""}{formatTime(new Date(data.date))}</h6>
           </div>
           <!-- {#if data.gc === '1/5'}
           <h1 class="title">
@@ -126,27 +148,60 @@
         </div>
       </div>
     </div>
+    {/if}
   {/each}
-  <!-- {/if} -->
-  <!-- <h1>
-		<span class="welcome">
-			
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2> -->
-
-  <!-- <Counter /> -->
 </section>
+<!-- <div class="flex-container">
+  {#each articles as data, index}
+    {@const { flexBasis, order } = getFlexProperties(data.class, index)}
+    {@const src = `/images/${data.img}`}
+    <div 
+    class="flex-item {data.class}" 
+    
+    style="flex-basis: {flexBasis}; order: {order};"
+  >
+  {#if data.img.split(".")[1] === "mp4"}
+  <a href={data.url} target="__blank">
+=    <video width="100%" height="100%" autoplay loop muted>
+      <source src="/images/{data.img}" type="video/mp4" />
+    </video>
+  </a>
+{:else}
+  <a href={data.url} target="__blank">
+    <img src="/images/{data.img}" alt="thumb" />
+  </a>
+{/if}
+  </div>
+  {/each}
+</div> -->
 
 <style>
-  /* .title {
-    margin-bottom: 7px;
-  } */
+ .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .flex-item {
+    margin-bottom: 10px;
+  }
+
+  .flex-item.fw {
+    height: 300px; /* Adjust as needed */
+  }
+
+  .flex-item.hw {
+    height: 150px; /* Adjust as needed */
+  }
+
+  .flex-item img {
+    /* width: 100%;
+    height: 100%; */
+    /* object-fit: contain; */
+  }
 
   .subtitle {
     /* font-size: 18px; */
@@ -209,6 +264,7 @@
     /* gap: 10px; */
     gap: 30px;
     grid-auto-flow: row dense;
+    /* grid-auto-rows: max-content; */
     /* align-items:baseline; */
     /* flex-direction: column;
 		justify-content: center;

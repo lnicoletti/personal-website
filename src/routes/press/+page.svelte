@@ -53,13 +53,14 @@
 
 <section>
 	<!-- <div class="container">
+	Leonardo's work has been cited across
 	{#each categories as c, i}
 	 <button
 	 class="button"
 	 on:click={()=>{
 		category = c
 	 }}
-	 ><h3>{c}</h3></button>
+	 ><h3>{c}</h3></button>{i < categories.length-2?", ":i === categories.length-2?" and ":""}
 	{/each}
 	</div> -->
 	<!-- {#if articles.length>0} -->
