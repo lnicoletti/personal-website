@@ -36,7 +36,7 @@ export const load = (async ({ fetch, params }) => {
   // console.log("base", base+"/src/lib/data/articles.csv")
   // const result = await fetch("../../src/lib/data/articles.csv", {
     // const result = await fetch(base+"/data/articles.csv", {
-      const result = await fetch("/data/articles_new.csv", {
+      const result = await fetch("/data/articles.csv", {
       // const result = await fetch("$lib/data/articles.csv", {
     // const result = await fetch("https://raw.githubusercontent.com/lnicoletti/personal-website/main/src/lib/data/articles.csv", {
     headers: { "content-type": "text/csv;charset=UTF-8" },
