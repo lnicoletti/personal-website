@@ -10,6 +10,7 @@
 	import "../app.css";
 	import "./styles.css";
 	import Layout from "./__layout.svelte";
+	import ThemeToggle from './ThemeToggle.svelte';
 
 	let open = false;
 	$: screenWidth = 1000;
@@ -81,6 +82,8 @@
 	<Footer />
 </div>
 
+<!-- <ThemeToggle /> -->
+
 <style>
 	.app {
 		display: flex;
@@ -140,5 +143,41 @@
 			background: white;
 			z-index: 1000;
 		}
+	}
+
+	/* Dark mode styles */
+	:global(body.dark-mode) {
+		background-color: #1a1a1a;
+		color: #f0f0f0;
+	}
+
+	:global(.dark-mode header) {
+		background-color: #2c2c2c;
+	}
+
+	:global(.dark-mode footer) {
+		background-color: #2c2c2c;
+	}
+
+	:global(.dark-mode .chat-container) {
+		background-color: #2c2c2c;
+	}
+
+	:global(.dark-mode .message) {
+		background-color: #3a3a3a;
+	}
+
+	:global(.dark-mode .user-message) {
+		background-color: #4a4a4a;
+	}
+
+	:global(.dark-mode input[type="text"]) {
+		background-color: #3a3a3a;
+		color: #f0f0f0;
+	}
+
+	:global(.dark-mode button) {
+		background-color: #4a4a4a;
+		color: #f0f0f0;
 	}
 </style>

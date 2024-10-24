@@ -22,7 +22,8 @@
 //   })};
 
 
-  let categories = ["all", "news", "policy (institution)", "policy (public)", "research"]
+//   let categories = ["all", "news", "policy (institution)", "policy (public)", "research"]
+let categories = ["news articles", "public policy", "the private sector", "academic research"]
   $: category = "all"
 
   const formatTime = timeFormat('%B, %Y');
@@ -52,17 +53,20 @@
 />
 
 <section>
-	<!-- <div class="container">
-	Leonardo's work has been cited across
+	<!-- <div class="container"> -->
+	<p class="subtitle">Leonardo's work has been cited in
 	{#each categories as c, i}
-	 <button
+	 <!-- <button
 	 class="button"
 	 on:click={()=>{
 		category = c
 	 }}
-	 ><h3>{c}</h3></button>{i < categories.length-2?", ":i === categories.length-2?" and ":""}
+	 ><h3>{c}</h3></button>{i < categories.length-2?", ":i === categories.length-2?" and ":""} -->
+	 <u>{c}</u>{i < categories.length-2?", ":i === categories.length-2?" and ":""}
 	{/each}
-	</div> -->
+	</p>
+	<br>
+	<!-- </div> -->
 	<!-- {#if articles.length>0} -->
 	<!-- {#if browser} -->
 	{#each showArticles as data, i}

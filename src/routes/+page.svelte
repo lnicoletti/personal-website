@@ -42,6 +42,17 @@
     }
   }
 
+  // Modify this function to match the original layout
+  function getFlexBasis(dataClass, laptop) {
+    if (!laptop) return '100%';
+    switch(dataClass) {
+      case 'fw': return '100%';
+      case 'hw': return '48%';
+      case 'nw': return '31%';
+      default: return '31%';
+    }
+  }
+
   // const formatTime = timeFormat("%B, %Y");
   const formatTime = timeFormat("%Y");
 
@@ -60,6 +71,11 @@
 
   // import welcome from '$lib/images/svelte-welcome.webp';
   // import welcome_fallback from '$lib/images/svelte-welcome.png';
+
+  // Modify this function to determine which column the project belongs to
+  function getColumnClass(dataClass) {
+    return dataClass === 'fw' ? 'main-column' : 'side-column';
+  }
 </script>
 
 <svelte:head>
@@ -77,106 +93,238 @@
 <!-- {data.fw==="TRUE"?"1 / 5":"1"} -->
 <!-- grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr -->
 <section>
-  <!-- {#if browser} -->
-  {#each articles as data, i}
-    {#if data.show === "TRUE"}
-    <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'}"> -->
-    <!-- <div class="project{laptop && data.fw == "TRUE"? "-fw" :""}"> -->
-    <div class="project{'-' + data.class}">
-      <!-- <div class="project" style="grid-column: {laptop ? data.gc : '1/2'};grid-row: {laptop ? data.gr : 'auto'}"> -->
-      <div
-        class="project-container"
-        style="border-width:{i === articles.length - 1 ? 0 : 1}"
-      >
-        {#if i === 0}
-          <div class="recent-stories">
-            <div><h6 class="cat">Featured</h6></div>
-          </div>
-        {/if}
-        <!-- {#if data.class !== 'nw' || !laptop} -->
-        <div class="thumbnail">
-          {#if data.img.split(".")[1] === "mp4"}
-            <a href={data.url} target="__blank">
-              <!-- svelte-ignore a11y-media-has-caption -->
-              <video width="100%" height="100%" autoplay loop muted>
-                <source src="/images/{data.img}" type="video/mp4" />
-                <!-- <source src="/images/{data.img.replace(".mp4",".ogg")}" type="video/ogg" /> -->
-              </video>
-            </a>
-          {:else}
-            <a href={data.url} target="__blank">
-              <img src="/images/{data.img}" alt="thumb" />
-            </a>
-          {/if}
-        </div>
-        <!-- {/if} -->
-        <div class="info">
-          <div class="flex">
-            <h6 class="cat">{data.cat}</h6>
-            <span class="dot">&#183</span>
-            <h6 class="date">{data.paid==="TRUE"?data.client + ", ":""}{formatTime(new Date(data.date))}</h6>
-          </div>
-          <!-- {#if data.gc === '1/5'}
-          <h1 class="title">
-            <a href={data.url} target="__blank">{data.title}</a>
-          </h1>
-        {:else} -->
-          <!-- {#if data.class === 'fw' && laptop} -->
-          <h1 class="title">
-            <a href={data.url} target="__blank">{data.title}</a>
-          </h1>
-          <!-- {:else}
-            <h2 class="title">
-              <a href={data.url} target="__blank">{data.title}</a>
-            </h2>
-          {/if} -->
-          <!-- {#if data.class === 'fw'|| !laptop} -->
-          <h4 class="subtitle">{data.subtitle}</h4>
-          <!-- {/if} -->
-          <!-- <div class="flex">
-            <h6 class="tools">
-              Built with <b>{data.tools.replaceAll('/', ', ')}</b> for
-              <b>{data.client}</b>
-            </h6>
-          </div>
-          {#if data.award !== null}
-            <div class="flex">
-              <h6 class="awards">{data.award}</h6>
+  <div class="main-column">
+    {#each articles as data, i}
+      {#if data.show === "TRUE" && data.class === 'fw'}
+        <div class="project-fw">
+          <!-- <div class="project-container" style="border-width:{i === articles.length - 1 ? 0 : 1}px"> -->
+            <div class="project-container" style="border-bottom-width:{i === articles.length - 1 ? 0 : 1}px">
+            {#if i === 0}
+              <div class="recent-stories">
+                <div><h6 class="cat">Featured</h6></div>
+              </div>
+            {/if}
+            <!-- {#if data.class !== 'nw' || !laptop} -->
+            <div class="thumbnail">
+              {#if data.img.split(".")[1] === "mp4"}
+                <a href={data.url} target="__blank">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video width="100%" height="100%" autoplay loop muted>
+                    <source src="/images/{data.img}" type="video/mp4" />
+                    <!-- <source src="/images/{data.img.replace(".mp4",".ogg")}" type="video/ogg" /> -->
+                  </video>
+                </a>
+              {:else}
+                <a href={data.url} target="__blank">
+                  <img src="/images/{data.img}" alt="thumb" />
+                </a>
+              {/if}
             </div>
-          {/if} -->
-          <!-- <div class="flex"><img src="src/lib/images/date.png" alt="thumb" class="icon"/><h6 class='date'>{formatTime(new Date(data.date))}</h6></div> -->
+            <!-- {/if} -->
+            <div class="info">
+              <div class="flex">
+                <h6 class="cat">{data.cat}</h6>
+                <span class="dot">&#183</span>
+                <h6 class="date">{data.paid==="TRUE"?data.client + ", ":""}{formatTime(new Date(data.date))}</h6>
+              </div>
+              <!-- {#if data.gc === '1/5'}
+              <h1 class="title">
+                <a href={data.url} target="__blank">{data.title}</a>
+              </h1>
+            {:else} -->
+              <!-- {#if data.class === 'fw' && laptop} -->
+              <h1 class="title">
+                <a href={data.url} target="__blank">{data.title}</a>
+              </h1>
+              <!-- {:else}
+                <h2 class="title">
+                  <a href={data.url} target="__blank">{data.title}</a>
+                </h2>
+              {/if} -->
+              <!-- {#if data.class === 'fw'|| !laptop} -->
+              <h4 class="subtitle">{data.subtitle}</h4>
+              <!-- {/if} -->
+              <!-- <div class="flex">
+                <h6 class="tools">
+                  Built with <b>{data.tools.replaceAll('/', ', ')}</b> for
+                  <b>{data.client}</b>
+                </h6>
+              </div>
+              {#if data.award !== null}
+                <div class="flex">
+                  <h6 class="awards">{data.award}</h6>
+                </div>
+              {/if} -->
+              <!-- <div class="flex"><img src="src/lib/images/date.png" alt="thumb" class="icon"/><h6 class='date'>{formatTime(new Date(data.date))}</h6></div> -->
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    {/if}
-  {/each}
-</section>
-<!-- <div class="flex-container">
-  {#each articles as data, index}
-    {@const { flexBasis, order } = getFlexProperties(data.class, index)}
-    {@const src = `/images/${data.img}`}
-    <div 
-    class="flex-item {data.class}" 
-    
-    style="flex-basis: {flexBasis}; order: {order};"
-  >
-  {#if data.img.split(".")[1] === "mp4"}
-  <a href={data.url} target="__blank">
-=    <video width="100%" height="100%" autoplay loop muted>
-      <source src="/images/{data.img}" type="video/mp4" />
-    </video>
-  </a>
-{:else}
-  <a href={data.url} target="__blank">
-    <img src="/images/{data.img}" alt="thumb" />
-  </a>
-{/if}
+      {/if}
+    {/each}
   </div>
-  {/each}
-</div> -->
+  <div class="side-column">
+    {#each articles as data, i}
+      {#if data.show === "TRUE" && data.class !== 'fw'}
+        <div class="project-{data.class}">
+          <div class="project-container" style="border-bottom-width:{i === articles.length - 1 ? 0 : 1}px">
+            {#if i === 0}
+              <div class="recent-stories">
+                <div><h6 class="cat">Featured</h6></div>
+              </div>
+            {/if}
+            <!-- {#if data.class !== 'nw' || !laptop} -->
+            <div class="thumbnail">
+              {#if data.img.split(".")[1] === "mp4"}
+                <a href={data.url} target="__blank">
+                  <!-- svelte-ignore a11y-media-has-caption -->
+                  <video width="100%" height="100%" autoplay loop muted>
+                    <source src="/images/{data.img}" type="video/mp4" />
+                    <!-- <source src="/images/{data.img.replace(".mp4",".ogg")}" type="video/ogg" /> -->
+                  </video>
+                </a>
+              {:else}
+                <a href={data.url} target="__blank">
+                  <img src="/images/{data.img}" alt="thumb" />
+                </a>
+              {/if}
+            </div>
+            <!-- {/if} -->
+            <div class="info">
+              <div class="flex">
+                <h6 class="cat">{data.cat}</h6>
+                <span class="dot">&#183</span>
+                <h6 class="date">{data.paid==="TRUE"?data.client + ", ":""}{formatTime(new Date(data.date))}</h6>
+              </div>
+              <!-- {#if data.gc === '1/5'}
+              <h1 class="title">
+                <a href={data.url} target="__blank">{data.title}</a>
+              </h1>
+            {:else} -->
+              <!-- {#if data.class === 'fw' && laptop} -->
+              <h1 class="title">
+                <a href={data.url} target="__blank">{data.title}</a>
+              </h1>
+              <!-- {:else}
+                <h2 class="title">
+                  <a href={data.url} target="__blank">{data.title}</a>
+                </h2>
+              {/if} -->
+              <!-- {#if data.class === 'fw'|| !laptop} -->
+              <h4 class="subtitle">{data.subtitle}</h4>
+              <!-- {/if} -->
+              <!-- <div class="flex">
+                <h6 class="tools">
+                  Built with <b>{data.tools.replaceAll('/', ', ')}</b> for
+                  <b>{data.client}</b>
+                </h6>
+              </div>
+              {#if data.award !== null}
+                <div class="flex">
+                  <h6 class="awards">{data.award}</h6>
+                </div>
+              {/if} -->
+              <!-- <div class="flex"><img src="src/lib/images/date.png" alt="thumb" class="icon"/><h6 class='date'>{formatTime(new Date(data.date))}</h6></div> -->
+            </div>
+          </div>
+        </div>
+      {/if}
+    {/each}
+  </div>
+</section>
 
 <style>
- .flex-container {
+  section {
+    display: flex;
+    justify-content: space-between;
+    /* width: 70%; */
+    max-width: 1800px;
+    margin: 0 auto;
+    margin-top: 40px;
+    column-gap: 10px;
+  }
+
+  .main-column {
+    flex: 3;
+    margin-right: 20px;
+  }
+
+  .side-column {
+    flex: 1;
+  }
+
+  .project-fw,
+  .project-hw,
+  .project-nw {
+    margin-bottom: 20px;
+  }
+
+  .project-container {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 1024px) {
+    section {
+      flex-direction: column;
+      /* width: 95%; */
+    }
+
+    .main-column,
+    .side-column {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .subtitle {
+      display: block;
+    }
+
+    .thumbnail {
+      display: block;
+    }
+  }
+
+  @media (max-width: 720px) {
+    section {
+      width: 95%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .project-fw h1 {
+      font-size: 2.5rem;
+    }
+
+    .project-hw h1,
+    .project-nw h1 {
+      font-size: 1.2rem;
+    }
+
+    .project-fw .thumbnail,
+    .project-hw .thumbnail {
+      display: block;
+    }
+
+    .project-nw .thumbnail {
+      display: none;
+    }
+
+    .project-fw .subtitle {
+      display: block;
+    }
+
+    .project-hw .subtitle,
+    .project-nw .subtitle {
+      display: none;
+    }
+  }
+
+  .flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -216,14 +364,9 @@
   .project-fw,
   .project-hw,
   .project-nw {
-    margin: 20px;
+    margin-bottom: 20px;
     margin-left: 0px;
     margin-right: 0px;
-    /* padding-bottom: 10px; */
-    /* border-bottom: 1px solid lightgrey; */
-    vertical-align: bottom;
-
-    /* height:100% */
   }
 
   .recent-stories {
@@ -244,7 +387,6 @@
   .project-container {
     border-bottom: 1px solid lightgrey;
     padding-bottom: 10px;
-    /* height:100% */
   }
 
   img {
@@ -256,48 +398,25 @@
     display: flex;
     flex-direction: column;
   }
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    /* NEW */
-    /* grid-template-columns: repeat(3, minmax(120px, 1fr)); */
-    /* gap: 10px; */
-    gap: 30px;
-    grid-auto-flow: row dense;
-    /* grid-auto-rows: max-content; */
-    /* align-items:baseline; */
-    /* flex-direction: column;
-		justify-content: center;
-		align-items: center; */
-    /* border-right: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black; */
-    /* width: 80%;
-    max-width: 1800px ; */
-    flex: 1;
-    /* align-items:end; */
-    grid-row-gap: 1rem;
-    /* column-rule: 4px solid red; */
-    /* stretch */
-  }
+  /* section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+  } */
 
   @media (max-width: 1024px) {
-    section {
-      grid-template-columns: 1fr;
+    .project, .project-fw, .project-hw, .project-nw {
+      flex-basis: 100% !important;
     }
 
     h1 {
       font-size: 1.8rem;
     }
-    .project-fw.subtitle {
-      display: block;
-    }
 
-    .project-hw.subtitle {
-      display: block;
-    }
-
-    .project-nw.subtitle {
+    .subtitle {
       display: block;
     }
 
@@ -307,22 +426,28 @@
   }
 
   @media (min-width: 1024px) {
+    .project-fw {
+      flex-basis: 100%;
+    }
+
+    .project-hw {
+      flex-basis: 48%;
+    }
+
+    .project-nw {
+      flex-basis: 31%;
+    }
+
     .project-fw h1 {
       font-size: 2.5rem;
     }
 
-    .project-hw h1 {
-      font-size: 1.2rem;
-    }
-
+    .project-hw h1,
     .project-nw h1 {
       font-size: 1.2rem;
     }
 
-    .project-fw .thumbnail {
-      display: block;
-    }
-
+    .project-fw .thumbnail,
     .project-hw .thumbnail {
       display: block;
     }
@@ -335,32 +460,9 @@
       display: block;
     }
 
-    .project-hw .subtitle {
-      display: none;
-    }
-
+    .project-hw .subtitle,
     .project-nw .subtitle {
       display: none;
-    }
-
-    section .project-fw {
-      grid-column-end: span 5;
-      grid-row-end: span 2;
-    }
-
-    /* section .project {
-	grid-column-end: span 1;
-	grid-row-end: span 2;
-   } */
-
-    section .project-hw {
-      grid-column-end: span 1;
-      grid-row-end: span 1;
-    }
-
-    section .project-nw {
-      grid-column-end: span 1;
-      grid-row-end: span 1;
     }
   }
 
