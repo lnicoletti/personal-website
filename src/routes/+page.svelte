@@ -164,6 +164,7 @@
   </div>
   <div class="side-column">
     {#each articles as data, i}
+    {@const showSideImgs = Math.random()>0.7}
       {#if data.show === "TRUE" && data.class !== 'fw'}
         <div class="project-{data.class}">
           <div class="project-container" style="border-bottom-width:{i === articles.length - 1 ? 0 : 1}px">
@@ -173,13 +174,13 @@
               </div>
             {/if}
             <!-- {#if data.class !== 'nw' || !laptop} -->
+            {#if showSideImgs}
             <div class="thumbnail">
               {#if data.img.split(".")[1] === "mp4"}
                 <a href={data.url} target="__blank">
                   <!-- svelte-ignore a11y-media-has-caption -->
                   <video width="100%" height="100%" autoplay loop muted>
                     <source src="/images/{data.img}" type="video/mp4" />
-                    <!-- <source src="/images/{data.img.replace(".mp4",".ogg")}" type="video/ogg" /> -->
                   </video>
                 </a>
               {:else}
@@ -188,6 +189,7 @@
                 </a>
               {/if}
             </div>
+            {/if}
             <!-- {/if} -->
             <div class="info">
               <div class="flex">

@@ -10,6 +10,7 @@
 	import Theme from "$lib/Theme.svelte";
 	import Counter from "./Counter.svelte";
     import Socials from "./Socials.svelte";
+	// import { _ } from 'svelte-i18n';
 
 	let socials = [
 		{
