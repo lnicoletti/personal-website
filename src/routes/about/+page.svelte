@@ -133,7 +133,7 @@
         <div>
           <img class="pixel-art" src="/images/headshot_new.jpg" alt="thumb" />
         </div>
-        <div>
+        <div class="hed">
           {@html hed}
         </div>
       </div>
@@ -247,6 +247,11 @@
 </section>
 
 <style>
+
+  .hed {
+    /* max-width: 40%; */
+  }
+
   .container {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -271,7 +276,7 @@
   }
 
   .pixel-art {
-    width: 400px;
+    width: 500px;
     object-fit: contain;
     /* width: 100%; */
   }
