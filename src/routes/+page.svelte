@@ -164,7 +164,7 @@
   </div>
   <div class="side-column">
     {#each articles as data, i}
-    {@const showSideImgs = Math.random()>0.7}
+    {@const showSideImgs = Math.random()>0.4}
       {#if data.show === "TRUE" && data.class !== 'fw'}
         <div class="project-{data.class}">
           <div class="project-container" style="border-bottom-width:{i === articles.length - 1 ? 0 : 1}px">
