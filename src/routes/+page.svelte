@@ -214,7 +214,9 @@
                 </h2>
               {/if} -->
               <!-- {#if data.class === 'fw'|| !laptop} -->
-              <h4 class="subtitle">{data.subtitle}</h4>
+              {#if data.subtitle}
+                <h4 class="subtitle">{data.subtitle}</h4>
+              {/if}
               <!-- {/if} -->
               <!-- <div class="flex">
                 <h6 class="tools">
