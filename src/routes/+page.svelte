@@ -176,6 +176,7 @@
             <!-- {#if data.class !== 'nw' || !laptop} -->
             {#if showSideImgs}
             <div class="thumbnail">
+              {#if data.img}
               {#if data.img.split(".")[1] === "mp4"}
                 <a href={data.url} target="__blank">
                   <!-- svelte-ignore a11y-media-has-caption -->
@@ -187,6 +188,7 @@
                 <a href={data.url} target="__blank">
                   <img src="/images/{data.img}" alt="thumb" />
                 </a>
+              {/if}
               {/if}
             </div>
             {/if}
