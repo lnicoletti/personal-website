@@ -9,6 +9,10 @@
   export let data;
   // export let talks;
 
+  const onlyUnique = (value, index, self) => {
+    return self.indexOf(value) === index;
+  }
+
   $: console.log("awards", data.awards);
 
   let awards = [];
@@ -18,6 +22,11 @@
   $: awards = data.awards;
   $: talks = data.talks;
   // }
+
+  $: awardYears = awards.map(award => award.year).filter(onlyUnique);
+  $: talkYears = talks.map(award => award.year).filter(onlyUnique);
+
+  // $: console.log("years", awardYears);
 
   // 	let bio = `Through effective science communication and visual storytelling, I believe that complex societal issues can be demystified and made accessible to the general public.<br><br>
 
@@ -149,23 +158,34 @@
       </div>
       <br />
       <h2 class="title">Awards</h2>
-      {#each awards.sort((a, b) => descending(a.year, b.year)) as data, i}
-        <h6>
-          <a class="achievement" href={data.link} target="__blank"
+      {#each awardYears as year}
+        <h6 class="title">{year}</h6>
+        <div class="year-container">
+        {#each awards.filter(award => award.year === year) as data, i}
+          <h6>
+            <a class="achievement" href={data.link} target="__blank"
             >{data.name}</a
           >
-          <span class="meta">- {data.award}, {data.year}</span>
+          <span class="meta">- {data.award}</span>
         </h6>
+        {/each}
+        </div>
       {/each}
       <br />
       <h2 class="title">Talks</h2>
-      {#each talks.sort((a, b) => descending(a.year, b.year)) as data, i}
+      {#each talkYears as year}
+        <h6 class="title">{year}</h6>
+        <div class="year-container">
+        {#each talks.filter(talk => talk.year === year) as data, i}
+        <!-- {#each talks.sort((a, b) => descending(a.year, b.year)) as data, i} -->
         <h6>
           <a class="achievement" href={data.link} target="__blank"
             >{data.name}</a
           >
-          <span class="meta">- {data.role}, {data.year}</span>
+          <span class="meta">- {data.role}</span>
         </h6>
+        {/each}
+        </div>
       {/each}
       <br>
     <!-- </div> -->
@@ -199,7 +219,7 @@
       <!-- <br> -->
       <h6>
         <span class="achievement">Email</span> -
-        <span class="meta"><a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3@bloomberg.net</a></span>
+        <span class="meta"><a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3 at bloomberg.net</a></span>
       </h6>
       <h6>
         <span class="achievement">Signal</span> -
@@ -208,7 +228,7 @@
       <h6>
         <span class="achievement">Other inquiries</span> -
         <span class="meta"><a href="mailto:info.leonardonicoletti@gmail.com"
-          >info.leonardonicoletti@gmail.com</a
+          >info.leonardonicoletti at gmail.com</a
         ></span>
       </h6>
       <br />
@@ -255,6 +275,10 @@
   .container {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .year-container {
+    margin-left: 40px;
   }
 
   .achievement {
