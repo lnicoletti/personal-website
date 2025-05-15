@@ -23,7 +23,7 @@
 
 
 //   let categories = ["all", "news", "policy (institution)", "policy (public)", "research"]
-let categories = ["news articles", "public policy", "the private sector", "academic research"]
+let categories = ["politicians", "public policy documents", "news articles", "private companies", "academic research"]
   $: category = "all"
 
   const formatTime = timeFormat('%B, %Y');
@@ -54,7 +54,7 @@ let categories = ["news articles", "public policy", "the private sector", "acade
 
 <section>
 	<!-- <div class="container"> -->
-	<p class="subtitle">Leonardo's work has been cited in
+	<p class="subtitle">Leonardo's work has been cited by
 	{#each categories as c, i}
 	 <!-- <button
 	 class="button"
