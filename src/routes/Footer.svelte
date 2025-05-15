@@ -10,7 +10,7 @@
 	import observable from '$lib/images/observable.svg'
     import Socials from './Socials.svelte';
 
-	let socials = [{icon:X, name:"X", url:"https://twitter.com/Leonardonclt"}, {icon:linkedin, name:"linkedin", url:"https://www.linkedin.com/in/leonardonclt/"}, {icon:instagram, name:"instagram", url:"https://www.instagram.com/leonardonclt/?hl=en"}, {icon:observable, name:"observable", url:"https://observablehq.com/@lnicoletti"}, {icon:github, name:"github", url:"https://github.com/lnicoletti"}]
+	let socials = [{icon:X, name:"X", url:"https://x.com/Leonardonclt"}, {icon:linkedin, name:"linkedin", url:"https://www.linkedin.com/in/leonardonclt/"}, {icon:instagram, name:"instagram", url:"https://www.instagram.com/leonardonclt/?hl=en"}, {icon:observable, name:"observable", url:"https://observablehq.com/@lnicoletti"}, {icon:github, name:"github", url:"https://github.com/lnicoletti"}]
 
 </script>
 
@@ -18,7 +18,7 @@
 <!-- <section> -->
 	<footer>
 		<div>
-		<h3>© 2022 - Leonardo Nicoletti</h3>
+		<h3>© {new Date().getFullYear()} Leonardo Nicoletti</h3>
 		</div>
 		<Socials />
 		<!-- <div class="hed">
