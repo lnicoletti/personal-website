@@ -23,7 +23,7 @@
 
 
 //   let categories = ["all", "news", "policy (institution)", "policy (public)", "research"]
-let categories = ["politicians", "public policy documents", "news articles", "private companies", "academic research"]
+let categories = ["lawmakers", "public policy documents", "news outlets", "private companies", "academic research"]
   $: category = "all"
 
   const formatTime = timeFormat('%B, %Y');
