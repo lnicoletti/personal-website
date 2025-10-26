@@ -205,7 +205,7 @@ p {
 p.subtitle {
 	font-family: var(--font-reg);
 	/* font-size: 1.1rem; */
-	font-size: 1.7rem;
+	font-size: 1.8rem;
 	font-weight: 400;
 	opacity: 1
 
@@ -221,6 +221,24 @@ p.subtitle {
 ul {
 	font-family: var(--font-mono);
 	font-size: 0.8rem;
+}
+
+@media (max-width: 1300px) {
+
+	p.subtitle {
+		font-size: 1.5rem;
+		/* font-size: 1rem; */
+		opacity: 1;	
+	  }
+}
+
+@media (max-width: 1000px) {
+
+	p.subtitle {
+		font-size: 1.3rem;
+		/* font-size: 1rem; */
+		opacity: 1;	
+	  }
 }
 
 @media (max-width: 500px) {
@@ -241,14 +259,18 @@ ul {
 	  }
 
 	p.subtitle {
-		font-size: 1rem;
+		font-size: 1.1rem;
 		/* font-size: 1rem; */
 		opacity: 1;
-		font-weight:500
+		/* font-weight:500 */
 	
 	  }
 		h3 {
 			font-size: 0.7rem;
+		}
+
+		h2 {
+			font-size: 1rem;
 		}
 }
 

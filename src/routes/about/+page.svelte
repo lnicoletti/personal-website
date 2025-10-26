@@ -52,7 +52,7 @@
     `;
 
   let hed = `
-   <p class="subtitle">Leonardo is an award-winning journalist at <a href="https://www.bloomberg.com/authors/AV8suZVL6jY/leonardo-nicoletti" target=__blank>Bloomberg News</a>. He works with data, code, and visual storytelling to report on issues at the intersection of technology and society.</p>
+   <p class="subtitle">Leonardo is an award-winning journalist at <a href="https://www.bloomberg.com/authors/AV8suZVL6jY/leonardo-nicoletti" target=__blank>Bloomberg News</a>. He works with data, photography, and visual storytelling to report on issues at the intersection of technology and society.</p>
   `;
 
   let subhed = `
@@ -143,8 +143,9 @@
         </div>
       </div> -->
       <div class={"flex"}>
-        <div>
-          <img class="pixel-art" src="/images/headshot_new.jpg" alt="thumb" />
+        <div class="hed-photo">
+          <!-- <img class="pixel-art" src="/images/headshot_new.jpg" alt="thumb" /> -->
+          <img class="headshot" src="/images/headshot_new.jpg" alt="thumb" />
         </div>
         <div class="hed">
           {@html hed}
@@ -276,6 +277,11 @@
     /* max-width: 40%; */
   }
 
+  .hed-photo {
+    max-width: 50%;
+
+  }
+
   .container {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -300,7 +306,7 @@
   .headshot {
     object-fit: contain;
     width: 100%;
-    max-width: 300px;
+    /* max-width: 500px; */
   }
 
   .pixel-art {
@@ -360,6 +366,34 @@
       margin-top: 20px;
     }
   } */
+
+  @media (max-width: 1000px) {
+
+    .hed-photo {
+      max-width: 100%;
+    }
+    .headshot {
+      margin-top: 20px;
+    }
+
+    /* remove below for pixel art */
+    /* .flex {
+      display: block;
+    } */
+
+    /* add below for pixel art */
+    .flex {
+      flex-direction: column-reverse;
+      column-gap: 10px;
+      margin-bottom: 20px;
+      margin-top:0px;
+    }
+
+    .pixel-art {
+    width: 420px;
+    /* width: 100%; */
+  }
+}
 
   @media (max-width: 500px) {
     .headshot {
