@@ -63,7 +63,7 @@
 
     <p>In 2025, Leonardo also investigated US president Trump's <a href="https://www.bloomberg.com/graphics/2025-trump-token-memecoin-crypto-finance/" target=__blank>cryptocurrency ventures</a> and uncovered potential <a href="https://www.bloomberg.com/graphics/2025-trump-memecoin-foreign-crypto-traders/" target=__blank>foreign ties</a> through large scale data analysis. This work was immediately referenced in <a href="https://youtu.be/mR_q9llV-70?si=fwMY7FIqbD-TxYbK&t=799" target=__blank>Senate hearings</a> about the corruption of US Foreign Policy, <a href="https://x.com/SenAdamSchiff/status/1920118462506033463" target=__blank>cited</a> by <a href="https://x.com/SenBlumenthal/status/1920223879793942764" target=__blank>high-ranking</a> <a href="https://x.com/chrismurphyct/status/1920169884568178728?s=46" target=__blank>politicians</a>, and used as evidence in <a href="https://casten.house.gov/imo/media/doc/trump_memecoin_dinner_letter_final.pdf" target=__blank>a congressional letter</a> requesting an immediate investigation to determine whether the Trump crypto dinner violates the federal bribery statute or the Foreign Emoluments Clause of the U.S. Constitution. <br><br>
 
-    Leonardo is a 2025 recipient of the <a href="https://www.prnewswire.com/news-releases/winners-of-the-2025-gerald-loeb-awards-announced-by-ucla-anderson-at-new-york-city-event-302580552.html" target=__blank>Gerald Loeb Awards</a>, the highest honors in business journalism, for his investigative work on the hidden impacts of Artificial Intelligence. He is also a 2024 recipient of the <a href="https://awards.journalists.org/entries/uncovering-bias-in-two-leading-ai-systems/" target=__blank>Online Journalism Awards (OJAs)</a>, recognizing Excellence in Technology Reporting, and the <a href="https://www.sigmaawards.org/meet-the-winners-of-the-sigmas-2024-for-data-journalism/" target=__blank>Sigma Award</a>, recognizing the best data journalism from around the world, for his work on Generative AI Bias.</p>
+    Leonardo is a 2025 recipient of the <a href="https://www.prnewswire.com/news-releases/winners-of-the-2025-gerald-loeb-awards-announced-by-ucla-anderson-at-new-york-city-event-302580552.html" target=__blank>Gerald Loeb Award</a>, the highest honor in business journalism, for his investigative work on the hidden impacts of Artificial Intelligence. He is also a 2024 recipient of the <a href="https://awards.journalists.org/entries/uncovering-bias-in-two-leading-ai-systems/" target=__blank>Online Journalism Awards (OJAs)</a>, recognizing Excellence in Technology Reporting, and the <a href="https://www.sigmaawards.org/meet-the-winners-of-the-sigmas-2024-for-data-journalism/" target=__blank>Sigma Award</a>, recognizing the best data journalism from around the world, for his work on Generative AI Bias.</p>
   `;
 
   // buy me a coffee
@@ -154,13 +154,13 @@
       <div>
         {@html subhed}
       </div>
-      <div class="mt-5 max-w-[250px]">
+      <!-- <div class="mt-5 max-w-[250px]">
         <a href="https://www.buymeacoffee.com/leonardonclt" target="__blank"
           ><img
             src="https://img.buymeacoffee.com/button-api/?text={coffeeText}&emoji={emoji}&slug=leonardonclt&button_colour={buttonColor}&font_colour={fontColor}&font_family={fontFamily}&outline_colour={outlineColor}&coffee_colour={coffeeColor}"
           /></a
         >
-      </div>
+      </div> -->
       <br />
       <h2 class="title">Awards</h2>
       {#each awardYears as year}
@@ -224,7 +224,7 @@
       <!-- <br> -->
       <h6>
         <span class="achievement">Email</span> -
-        <span class="meta"><a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3 at bloomberg.net</a></span>
+        <span class="meta"><a href="mailto:lnicoletti3@bloomberg.net">lnicoletti3 at bloomberg dot net</a></span>
       </h6>
       <h6>
         <span class="achievement">Signal</span> -
@@ -233,7 +233,7 @@
       <h6>
         <span class="achievement">Other inquiries</span> -
         <span class="meta"><a href="mailto:info.leonardonicoletti@gmail.com"
-          >info.leonardonicoletti at gmail.com</a
+          >info dot leonardonicoletti at gmail dot com</a
         ></span>
       </h6>
       <br />
